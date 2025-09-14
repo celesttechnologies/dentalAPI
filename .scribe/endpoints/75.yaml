@@ -1,0 +1,465 @@
+name: ClinicLabWorkComponent
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/clinic/labwork-component
+    metadata:
+      groupName: ClinicLabWorkComponent
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_lab_work_components": [
+                          {
+                              "id": 1,
+                              "clinic_id": 1,
+                              "component_name": "Example Name",
+                              "component_description": "Example value",
+                              "lab_work_cost": "Example value",
+                              "component_category_id": 1,
+                              "is_deleted": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/clinic/labwork-component
+    metadata:
+      groupName: ClinicLabWorkComponent
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentName:
+        name: ComponentName
+        description: required.
+        required: false
+        example: '"Example ComponentName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentDescription:
+        name: ComponentDescription
+        description: required.
+        required: false
+        example: '"Example ComponentDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LabWorkCost:
+        name: LabWorkCost
+        description: 'required. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentCategoryID:
+        name: ComponentCategoryID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ComponentCategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      ComponentName: '"Example ComponentName"'
+      ComponentDescription: '"Example ComponentDescription"'
+      LabWorkCost: 1.0
+      ComponentCategoryID: '"Example ComponentCategoryID"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "component": {
+                          "id": 1,
+                          "clinic_id": 1,
+                          "component_name": "Example Name",
+                          "component_description": "Example value",
+                          "lab_work_cost": "Example value",
+                          "component_category_id": 1,
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/clinic/labwork-component/{clinicLabWorkComponent_LabWorkComponentID}'
+    metadata:
+      groupName: ClinicLabWorkComponent
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clinicLabWorkComponent_LabWorkComponentID:
+        name: clinicLabWorkComponent_LabWorkComponentID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the cliniclabworkcomponent to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clinicLabWorkComponent_LabWorkComponentID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentName:
+        name: ComponentName
+        description: optional.
+        required: false
+        example: '"Example ComponentName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentDescription:
+        name: ComponentDescription
+        description: optional.
+        required: false
+        example: '"Example ComponentDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LabWorkCost:
+        name: LabWorkCost
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ComponentCategoryID:
+        name: ComponentCategoryID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ComponentCategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      ComponentName: '"Example ComponentName"'
+      ComponentDescription: '"Example ComponentDescription"'
+      LabWorkCost: 1.0
+      ComponentCategoryID: '"Example ComponentCategoryID"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "component": {
+                          "id": 1,
+                          "clinic_id": 1,
+                          "component_name": "Example Name",
+                          "component_description": "Example value",
+                          "lab_work_cost": "Example value",
+                          "component_category_id": 1,
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

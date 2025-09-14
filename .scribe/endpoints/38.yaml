@@ -1,0 +1,182 @@
+name: PatientNote
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/notes'
+    metadata:
+      groupName: PatientNote
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "patient_notes": [
+                          {
+                              "id": 1,
+                              "patient_id": 1,
+                              "note": "Example value",
+                              "created_by": "Example value",
+                              "created_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient_PatientID}/notes'
+    metadata:
+      groupName: PatientNote
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      Note:
+        name: Note
+        description: required.
+        required: false
+        example: '"Example Note"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      Note: '"Example Note"'
+      CreatedBy: '"Example CreatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "patient_note": {
+                          "id": 1,
+                          "patient_id": 1,
+                          "note": "Example value",
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

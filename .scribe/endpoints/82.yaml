@@ -1,0 +1,515 @@
+name: ClinicTVRSSURLMaster
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/clinic/tv/rss/url-master
+    metadata:
+      groupName: ClinicTVRSSURLMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_tv_rss_urls": [
+                          {
+                              "id": 1,
+                              "rss_title": "Example value",
+                              "rss_description": "Example value",
+                              "rss_url": "Example value",
+                              "rss_xml": "Example value",
+                              "is_user_configurable": true,
+                              "is_online_feed": true,
+                              "is_auto_sync": true,
+                              "sync_frequency": "Example value",
+                              "last_sync_time": "Example value",
+                              "is_deleted": true,
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/clinic/tv/rss/url-master
+    metadata:
+      groupName: ClinicTVRSSURLMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RSSTitle:
+        name: RSSTitle
+        description: required.
+        required: false
+        example: '"Example RSSTitle"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSDescription:
+        name: RSSDescription
+        description: required.
+        required: false
+        example: '"Example RSSDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSURL:
+        name: RSSURL
+        description: required.
+        required: false
+        example: '"Example RSSURL"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSXML:
+        name: RSSXML
+        description: required.
+        required: false
+        example: '"Example RSSXML"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsUserConfigurable:
+        name: IsUserConfigurable
+        description: required.
+        required: false
+        example: '"Example IsUserConfigurable"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsOnlineFeed:
+        name: IsOnlineFeed
+        description: required.
+        required: false
+        example: '"Example IsOnlineFeed"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsAutoSync:
+        name: IsAutoSync
+        description: required.
+        required: false
+        example: '"Example IsAutoSync"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SyncFrequency:
+        name: SyncFrequency
+        description: required.
+        required: false
+        example: '"Example SyncFrequency"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastSyncTime:
+        name: LastSyncTime
+        description: required.
+        required: false
+        example: '"Example LastSyncTime"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      RSSTitle: '"Example RSSTitle"'
+      RSSDescription: '"Example RSSDescription"'
+      RSSURL: '"Example RSSURL"'
+      RSSXML: '"Example RSSXML"'
+      IsUserConfigurable: '"Example IsUserConfigurable"'
+      IsOnlineFeed: '"Example IsOnlineFeed"'
+      IsAutoSync: '"Example IsAutoSync"'
+      SyncFrequency: '"Example SyncFrequency"'
+      LastSyncTime: '"Example LastSyncTime"'
+      IsDeleted: '"Example IsDeleted"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_tv_rss_url": {
+                          "id": 1,
+                          "rss_title": "Example value",
+                          "rss_description": "Example value",
+                          "rss_url": "Example value",
+                          "rss_xml": "Example value",
+                          "is_user_configurable": true,
+                          "is_online_feed": true,
+                          "is_auto_sync": true,
+                          "sync_frequency": "Example value",
+                          "last_sync_time": "Example value",
+                          "is_deleted": true,
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/clinic/tv/rss/url-master/{clinicTVRSSURLMaster_NewsTickerRSSMasterID}'
+    metadata:
+      groupName: ClinicTVRSSURLMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clinicTVRSSURLMaster_NewsTickerRSSMasterID:
+        name: clinicTVRSSURLMaster_NewsTickerRSSMasterID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the clinictvrssurlmaster to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clinicTVRSSURLMaster_NewsTickerRSSMasterID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RSSTitle:
+        name: RSSTitle
+        description: optional.
+        required: false
+        example: '"Example RSSTitle"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSDescription:
+        name: RSSDescription
+        description: optional.
+        required: false
+        example: '"Example RSSDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSURL:
+        name: RSSURL
+        description: optional.
+        required: false
+        example: '"Example RSSURL"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RSSXML:
+        name: RSSXML
+        description: optional.
+        required: false
+        example: '"Example RSSXML"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsUserConfigurable:
+        name: IsUserConfigurable
+        description: optional.
+        required: false
+        example: '"Example IsUserConfigurable"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsOnlineFeed:
+        name: IsOnlineFeed
+        description: optional.
+        required: false
+        example: '"Example IsOnlineFeed"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsAutoSync:
+        name: IsAutoSync
+        description: optional.
+        required: false
+        example: '"Example IsAutoSync"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SyncFrequency:
+        name: SyncFrequency
+        description: optional.
+        required: false
+        example: '"Example SyncFrequency"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastSyncTime:
+        name: LastSyncTime
+        description: optional.
+        required: false
+        example: '"Example LastSyncTime"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      RSSTitle: '"Example RSSTitle"'
+      RSSDescription: '"Example RSSDescription"'
+      RSSURL: '"Example RSSURL"'
+      RSSXML: '"Example RSSXML"'
+      IsUserConfigurable: '"Example IsUserConfigurable"'
+      IsOnlineFeed: '"Example IsOnlineFeed"'
+      IsAutoSync: '"Example IsAutoSync"'
+      SyncFrequency: '"Example SyncFrequency"'
+      LastSyncTime: '"Example LastSyncTime"'
+      IsDeleted: '"Example IsDeleted"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_tv_rss_url": {
+                          "id": 1,
+                          "rss_title": "Example value",
+                          "rss_description": "Example value",
+                          "rss_url": "Example value",
+                          "rss_xml": "Example value",
+                          "is_user_configurable": true,
+                          "is_online_feed": true,
+                          "is_auto_sync": true,
+                          "sync_frequency": "Example value",
+                          "last_sync_time": "Example value",
+                          "is_deleted": true,
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,346 @@
+name: User
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/users
+    metadata:
+      groupName: User
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "users": [
+                          {
+                              "id": 1,
+                              "role_id": 1,
+                              "client_id": 1,
+                              "user_name": "Example Name",
+                              "email": "user@example.com",
+                              "name": "Example Name",
+                              "is_deleted": true,
+                              "mobile": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/users
+    metadata:
+      groupName: User
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RoleID:
+        name: RoleID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RoleID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClientID:
+        name: ClientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UserName:
+        name: UserName
+        description: 'required. Maximum length: 255. Must be unique.'
+        required: false
+        example: '"Example UserName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Password:
+        name: Password
+        description: 'required. Minimum length: 8.'
+        required: false
+        example: '"Example Password"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Email:
+        name: Email
+        description: 'required. Must be a valid email address. Must be unique.'
+        required: false
+        example: '"Example Email"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Name:
+        name: Name
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example Name"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Mobile:
+        name: Mobile
+        description: 'optional. nullable. Maximum length: 15.'
+        required: false
+        example: '"Example Mobile"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      RoleID: '"Example RoleID"'
+      ClientID: '"Example ClientID"'
+      UserName: '"Example UserName"'
+      Password: '"Example Password"'
+      Email: '"Example Email"'
+      Name: '"Example Name"'
+      Mobile: '"Example Mobile"'
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/users/{user_UserID}'
+    metadata:
+      groupName: User
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_UserID:
+        name: user_UserID
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the user to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      user_UserID: architecto
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RoleID:
+        name: RoleID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RoleID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClientID:
+        name: ClientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UserName:
+        name: UserName
+        description: 'optional. Maximum length: 255. Must be unique.'
+        required: false
+        example: '"Example UserName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Password:
+        name: Password
+        description: 'optional. nullable. Minimum length: 8.'
+        required: false
+        example: '"Example Password"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Email:
+        name: Email
+        description: 'optional. Must be a valid email address. Must be unique.'
+        required: false
+        example: '"Example Email"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Name:
+        name: Name
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example Name"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Mobile:
+        name: Mobile
+        description: 'optional. nullable. Maximum length: 15.'
+        required: false
+        example: '"Example Mobile"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      RoleID: '"Example RoleID"'
+      ClientID: '"Example ClientID"'
+      UserName: '"Example UserName"'
+      Password: '"Example Password"'
+      Email: '"Example Email"'
+      Name: '"Example Name"'
+      Mobile: '"Example Mobile"'
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

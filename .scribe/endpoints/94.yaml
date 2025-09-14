@@ -1,0 +1,414 @@
+name: ECGClinicSubscriptionModel
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/ecg/clinic/subscription
+    metadata:
+      groupName: ECGClinicSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": [
+                      {
+                          "id": 1,
+                          "name": "Example Name",
+                          "email": "user@example.com",
+                          "created_at": "2025-05-19 04:57:26",
+                          "updated_at": "2025-05-19 04:57:26"
+                      }
+                  ]
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ecg/clinic/susbcription
+    metadata:
+      groupName: ECGClinicSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionPackageID:
+        name: SubscriptionPackageID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionPackageID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StartDate:
+        name: StartDate
+        description: 'required. date.'
+        required: false
+        example: '"Example StartDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EndDate:
+        name: EndDate
+        description: 'required. date.'
+        required: false
+        example: '"Example EndDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsCurrentSubscription:
+        name: IsCurrentSubscription
+        description: required.
+        required: false
+        example: '"Example IsCurrentSubscription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      SubscriptionPackageID: '"Example SubscriptionPackageID"'
+      StartDate: '"Example StartDate"'
+      EndDate: '"Example EndDate"'
+      IsCurrentSubscription: '"Example IsCurrentSubscription"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "id": 1,
+                      "name": "Example Name",
+                      "email": "user@example.com",
+                      "created_at": "2025-05-19 04:57:26",
+                      "updated_at": "2025-05-19 04:57:26"
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/ecg/clinic/subscription/{eCGClinicSubscriptionModel_ClinicSubscriptionDetailID}'
+    metadata:
+      groupName: ECGClinicSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      eCGClinicSubscriptionModel_ClinicSubscriptionDetailID:
+        name: eCGClinicSubscriptionModel_ClinicSubscriptionDetailID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the ecgclinicsubscriptionmodel to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      eCGClinicSubscriptionModel_ClinicSubscriptionDetailID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionPackageID:
+        name: SubscriptionPackageID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionPackageID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StartDate:
+        name: StartDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example StartDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EndDate:
+        name: EndDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example EndDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsCurrentSubscription:
+        name: IsCurrentSubscription
+        description: optional.
+        required: false
+        example: '"Example IsCurrentSubscription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      SubscriptionPackageID: '"Example SubscriptionPackageID"'
+      StartDate: '"Example StartDate"'
+      EndDate: '"Example EndDate"'
+      IsCurrentSubscription: '"Example IsCurrentSubscription"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "id": 1,
+                      "name": "Example Name",
+                      "email": "user@example.com",
+                      "created_at": "2025-05-19 04:57:26",
+                      "updated_at": "2025-05-19 04:57:26"
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

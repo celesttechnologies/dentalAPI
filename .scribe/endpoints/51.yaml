@@ -1,0 +1,646 @@
+name: AspnetMembership
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/aspnet/membership
+    metadata:
+      groupName: AspnetMembership
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "aspnetMembership": [
+                          {
+                              "id": 1,
+                              "password": "password123",
+                              "password_format": "Example value",
+                              "password_salt": "Example value",
+                              "mobile_pin": "Example value",
+                              "email": "user@example.com",
+                              "lowered_email": "user@example.com",
+                              "password_question": "Example value",
+                              "password_answer": "Example value",
+                              "is_approved": true,
+                              "is_locked_out": true,
+                              "created_on": "Example value",
+                              "last_login_on": "Example value",
+                              "last_password_changed_on": "Example value",
+                              "last_lockout_on": "Example value",
+                              "failed_password_attempt_count": "Example value",
+                              "failed_password_attempt_window_start": "Example value",
+                              "failed_password_answer_attempt_count": "Example value",
+                              "failed_password_answer_attempt_window_start": "Example value",
+                              "comment": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/aspnet/membership
+    metadata:
+      groupName: AspnetMembership
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      UserId:
+        name: UserId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example UserId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Password:
+        name: Password
+        description: required.
+        required: false
+        example: '"Example Password"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordFormat:
+        name: PasswordFormat
+        description: 'required. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordSalt:
+        name: PasswordSalt
+        description: required.
+        required: false
+        example: '"Example PasswordSalt"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Email:
+        name: Email
+        description: 'required. Must be a valid email address.'
+        required: false
+        example: '"Example Email"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordQuestion:
+        name: PasswordQuestion
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PasswordQuestion"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      PasswordAnswer:
+        name: PasswordAnswer
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PasswordAnswer"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsApproved:
+        name: IsApproved
+        description: required.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsLockedOut:
+        name: IsLockedOut
+        description: required.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreateDate:
+        name: CreateDate
+        description: 'required. date.'
+        required: false
+        example: '"Example CreateDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastLoginDate:
+        name: LastLoginDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastLoginDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastPasswordChangedDate:
+        name: LastPasswordChangedDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastPasswordChangedDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      FailedPasswordAttemptCount:
+        name: FailedPasswordAttemptCount
+        description: 'required. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FailedPasswordAttemptWindowStart:
+        name: FailedPasswordAttemptWindowStart
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example FailedPasswordAttemptWindowStart"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      FailedPasswordAnswerAttemptCount:
+        name: FailedPasswordAnswerAttemptCount
+        description: 'required. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FailedPasswordAnswerAttemptWindowStart:
+        name: FailedPasswordAnswerAttemptWindowStart
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example FailedPasswordAnswerAttemptWindowStart"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Comment:
+        name: Comment
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Comment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      UserId: '"Example UserId"'
+      Password: '"Example Password"'
+      PasswordFormat: 1.0
+      PasswordSalt: '"Example PasswordSalt"'
+      Email: '"Example Email"'
+      PasswordQuestion: '"Example PasswordQuestion"'
+      PasswordAnswer: '"Example PasswordAnswer"'
+      IsApproved: true
+      IsLockedOut: true
+      CreateDate: '"Example CreateDate"'
+      LastLoginDate: '"Example LastLoginDate"'
+      LastPasswordChangedDate: '"Example LastPasswordChangedDate"'
+      FailedPasswordAttemptCount: 1.0
+      FailedPasswordAttemptWindowStart: '"Example FailedPasswordAttemptWindowStart"'
+      FailedPasswordAnswerAttemptCount: 1.0
+      FailedPasswordAnswerAttemptWindowStart: '"Example FailedPasswordAnswerAttemptWindowStart"'
+      Comment: '"Example Comment"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "membership": {
+                          "id": 1,
+                          "password": "password123",
+                          "password_format": "Example value",
+                          "password_salt": "Example value",
+                          "mobile_pin": "Example value",
+                          "email": "user@example.com",
+                          "lowered_email": "user@example.com",
+                          "password_question": "Example value",
+                          "password_answer": "Example value",
+                          "is_approved": true,
+                          "is_locked_out": true,
+                          "created_on": "Example value",
+                          "last_login_on": "Example value",
+                          "last_password_changed_on": "Example value",
+                          "last_lockout_on": "Example value",
+                          "failed_password_attempt_count": "Example value",
+                          "failed_password_attempt_window_start": "Example value",
+                          "failed_password_answer_attempt_count": "Example value",
+                          "failed_password_answer_attempt_window_start": "Example value",
+                          "comment": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/aspnet/membership/{aspnetMembership_UserId}'
+    metadata:
+      groupName: AspnetMembership
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      aspnetMembership_UserId:
+        name: aspnetMembership_UserId
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the aspnetmembership to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      aspnetMembership_UserId: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      UserId:
+        name: UserId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example UserId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Password:
+        name: Password
+        description: optional.
+        required: false
+        example: '"Example Password"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordFormat:
+        name: PasswordFormat
+        description: 'optional. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordSalt:
+        name: PasswordSalt
+        description: optional.
+        required: false
+        example: '"Example PasswordSalt"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Email:
+        name: Email
+        description: 'optional. Must be a valid email address.'
+        required: false
+        example: '"Example Email"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PasswordQuestion:
+        name: PasswordQuestion
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PasswordQuestion"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      PasswordAnswer:
+        name: PasswordAnswer
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PasswordAnswer"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsApproved:
+        name: IsApproved
+        description: optional.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsLockedOut:
+        name: IsLockedOut
+        description: optional.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreateDate:
+        name: CreateDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example CreateDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastLoginDate:
+        name: LastLoginDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastLoginDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastPasswordChangedDate:
+        name: LastPasswordChangedDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastPasswordChangedDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      FailedPasswordAttemptCount:
+        name: FailedPasswordAttemptCount
+        description: 'optional. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FailedPasswordAttemptWindowStart:
+        name: FailedPasswordAttemptWindowStart
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example FailedPasswordAttemptWindowStart"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      FailedPasswordAnswerAttemptCount:
+        name: FailedPasswordAnswerAttemptCount
+        description: 'optional. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FailedPasswordAnswerAttemptWindowStart:
+        name: FailedPasswordAnswerAttemptWindowStart
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example FailedPasswordAnswerAttemptWindowStart"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Comment:
+        name: Comment
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Comment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      UserId: '"Example UserId"'
+      Password: '"Example Password"'
+      PasswordFormat: 1.0
+      PasswordSalt: '"Example PasswordSalt"'
+      Email: '"Example Email"'
+      PasswordQuestion: '"Example PasswordQuestion"'
+      PasswordAnswer: '"Example PasswordAnswer"'
+      IsApproved: true
+      IsLockedOut: true
+      CreateDate: '"Example CreateDate"'
+      LastLoginDate: '"Example LastLoginDate"'
+      LastPasswordChangedDate: '"Example LastPasswordChangedDate"'
+      FailedPasswordAttemptCount: 1.0
+      FailedPasswordAttemptWindowStart: '"Example FailedPasswordAttemptWindowStart"'
+      FailedPasswordAnswerAttemptCount: 1.0
+      FailedPasswordAnswerAttemptWindowStart: '"Example FailedPasswordAnswerAttemptWindowStart"'
+      Comment: '"Example Comment"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "membership": {
+                          "id": 1,
+                          "password": "password123",
+                          "password_format": "Example value",
+                          "password_salt": "Example value",
+                          "mobile_pin": "Example value",
+                          "email": "user@example.com",
+                          "lowered_email": "user@example.com",
+                          "password_question": "Example value",
+                          "password_answer": "Example value",
+                          "is_approved": true,
+                          "is_locked_out": true,
+                          "created_on": "Example value",
+                          "last_login_on": "Example value",
+                          "last_password_changed_on": "Example value",
+                          "last_lockout_on": "Example value",
+                          "failed_password_attempt_count": "Example value",
+                          "failed_password_attempt_window_start": "Example value",
+                          "failed_password_answer_attempt_count": "Example value",
+                          "failed_password_answer_attempt_window_start": "Example value",
+                          "comment": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

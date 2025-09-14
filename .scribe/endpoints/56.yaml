@@ -1,0 +1,337 @@
+name: AspnetRole
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/aspnet/role
+    metadata:
+      groupName: AspnetRole
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "aspnetRoles": [
+                          {
+                              "application_id": 1,
+                              "role_id": 1,
+                              "role_name": "Example Name",
+                              "lowered_role_name": "Example Name",
+                              "description": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/aspnet/role
+    metadata:
+      groupName: AspnetRole
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RoleId:
+        name: RoleId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RoleId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ApplicationId:
+        name: ApplicationId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ApplicationId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RoleName:
+        name: RoleName
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RoleName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LoweredRoleName:
+        name: LoweredRoleName
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example LoweredRoleName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      RoleId: '"Example RoleId"'
+      ApplicationId: '"Example ApplicationId"'
+      RoleName: '"Example RoleName"'
+      LoweredRoleName: '"Example LoweredRoleName"'
+      Description: '"Example Description"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "role": {
+                          "application_id": 1,
+                          "role_id": 1,
+                          "role_name": "Example Name",
+                          "lowered_role_name": "Example Name",
+                          "description": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/aspnet/role/{aspnetRole_RoleId}'
+    metadata:
+      groupName: AspnetRole
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      aspnetRole_RoleId:
+        name: aspnetRole_RoleId
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the aspnetrole to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      aspnetRole_RoleId: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      RoleId:
+        name: RoleId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RoleId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ApplicationId:
+        name: ApplicationId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ApplicationId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RoleName:
+        name: RoleName
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RoleName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LoweredRoleName:
+        name: LoweredRoleName
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example LoweredRoleName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      RoleId: '"Example RoleId"'
+      ApplicationId: '"Example ApplicationId"'
+      RoleName: '"Example RoleName"'
+      LoweredRoleName: '"Example LoweredRoleName"'
+      Description: '"Example Description"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "role": {
+                          "application_id": 1,
+                          "role_id": 1,
+                          "role_name": "Example Name",
+                          "lowered_role_name": "Example Name",
+                          "description": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

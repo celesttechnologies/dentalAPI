@@ -1,0 +1,540 @@
+name: ECGConfigChannelInformation
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/ecg/config/channel/information
+    metadata:
+      groupName: ECGConfigChannelInformation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "channel_information": [
+                          {
+                              "channel_information_id": 1,
+                              "ecg_channel_id": 1,
+                              "information_title": "Example value",
+                              "title_link": "Example value",
+                              "title_link_tag": "Example value",
+                              "description": "Example value",
+                              "other_link": "Example value",
+                              "other_link_tag": "Example value",
+                              "publish_till": "Example value",
+                              "is_active": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ecg/config/channel/information
+    metadata:
+      groupName: ECGConfigChannelInformation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ECGChannelID:
+        name: ECGChannelID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ECGChannelID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InformationTitle:
+        name: InformationTitle
+        description: required.
+        required: false
+        example: '"Example InformationTitle"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TitleLink:
+        name: TitleLink
+        description: required.
+        required: false
+        example: '"Example TitleLink"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TitleLinkTag:
+        name: TitleLinkTag
+        description: required.
+        required: false
+        example: '"Example TitleLinkTag"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: required.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherLink:
+        name: OtherLink
+        description: required.
+        required: false
+        example: '"Example OtherLink"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherLinkTag:
+        name: OtherLinkTag
+        description: required.
+        required: false
+        example: '"Example OtherLinkTag"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishTill:
+        name: PublishTill
+        description: required.
+        required: false
+        example: '"Example PublishTill"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: required.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ECGChannelID: '"Example ECGChannelID"'
+      InformationTitle: '"Example InformationTitle"'
+      TitleLink: '"Example TitleLink"'
+      TitleLinkTag: '"Example TitleLinkTag"'
+      Description: '"Example Description"'
+      OtherLink: '"Example OtherLink"'
+      OtherLinkTag: '"Example OtherLinkTag"'
+      PublishTill: '"Example PublishTill"'
+      IsActive: '"Example IsActive"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "channel_information": {
+                          "channel_information_id": 1,
+                          "ecg_channel_id": 1,
+                          "information_title": "Example value",
+                          "title_link": "Example value",
+                          "title_link_tag": "Example value",
+                          "description": "Example value",
+                          "other_link": "Example value",
+                          "other_link_tag": "Example value",
+                          "publish_till": "Example value",
+                          "is_active": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/ecg/config/channel/information/{eCGConfigChannelInformation_ChannelInformationID}'
+    metadata:
+      groupName: ECGConfigChannelInformation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      eCGConfigChannelInformation_ChannelInformationID:
+        name: eCGConfigChannelInformation_ChannelInformationID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the ecgconfigchannelinformation to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      eCGConfigChannelInformation_ChannelInformationID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ECGChannelID:
+        name: ECGChannelID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ECGChannelID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InformationTitle:
+        name: InformationTitle
+        description: optional.
+        required: false
+        example: '"Example InformationTitle"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TitleLink:
+        name: TitleLink
+        description: optional.
+        required: false
+        example: '"Example TitleLink"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TitleLinkTag:
+        name: TitleLinkTag
+        description: optional.
+        required: false
+        example: '"Example TitleLinkTag"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: optional.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherLink:
+        name: OtherLink
+        description: optional.
+        required: false
+        example: '"Example OtherLink"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherLinkTag:
+        name: OtherLinkTag
+        description: optional.
+        required: false
+        example: '"Example OtherLinkTag"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishTill:
+        name: PublishTill
+        description: optional.
+        required: false
+        example: '"Example PublishTill"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: optional.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ECGChannelID: '"Example ECGChannelID"'
+      InformationTitle: '"Example InformationTitle"'
+      TitleLink: '"Example TitleLink"'
+      TitleLinkTag: '"Example TitleLinkTag"'
+      Description: '"Example Description"'
+      OtherLink: '"Example OtherLink"'
+      OtherLinkTag: '"Example OtherLinkTag"'
+      PublishTill: '"Example PublishTill"'
+      IsActive: '"Example IsActive"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "channel_information": {
+                          "channel_information_id": 1,
+                          "ecg_channel_id": 1,
+                          "information_title": "Example value",
+                          "title_link": "Example value",
+                          "title_link_tag": "Example value",
+                          "description": "Example value",
+                          "other_link": "Example value",
+                          "other_link_tag": "Example value",
+                          "publish_till": "Example value",
+                          "is_active": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

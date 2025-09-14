@@ -1,0 +1,612 @@
+name: PatientDOCFolder
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/doc/folder'
+    metadata:
+      groupName: PatientDOCFolder
+      groupDescription: ''
+      subgroup: DOCFolder
+      subgroupDescription: 'PatientDOCFolderController handles the CRUD operations for patient doc folder controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "folders": [
+                          {
+                              "folder_id": 1,
+                              "clinic_id": 1,
+                              "title": "Example value",
+                              "description": "Example value",
+                              "parent_folder_id": 1,
+                              "folder_type_id": 1,
+                              "is_deleted": true,
+                              "created_by": "Example value",
+                              "created_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "folder_path": "Example value",
+                              "partition_id": 1,
+                              "row_guid": 1,
+                              "folder_type": "Example value",
+                              "owner": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/doc/folder'
+    metadata:
+      groupName: PatientDOCFolder
+      groupDescription: ''
+      subgroup: DOCFolder
+      subgroupDescription: 'PatientDOCFolderController handles the CRUD operations for patient doc folder controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Title:
+        name: Title
+        description: required.
+        required: false
+        example: '"Example Title"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: required.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ParentFolderId:
+        name: ParentFolderId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ParentFolderId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderTypeId:
+        name: FolderTypeId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example FolderTypeId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderPath:
+        name: FolderPath
+        description: required.
+        required: false
+        example: '"Example FolderPath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PartitionId:
+        name: PartitionId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PartitionId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RowGuid:
+        name: RowGuid
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderType:
+        name: FolderType
+        description: required.
+        required: false
+        example: '"Example FolderType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Owner:
+        name: Owner
+        description: required.
+        required: false
+        example: '"Example Owner"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      Title: '"Example Title"'
+      Description: '"Example Description"'
+      ParentFolderId: '"Example ParentFolderId"'
+      FolderTypeId: '"Example FolderTypeId"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      FolderPath: '"Example FolderPath"'
+      PartitionId: '"Example PartitionId"'
+      RowGuid: '"1"'
+      FolderType: '"Example FolderType"'
+      Owner: '"Example Owner"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "folder": {
+                          "folder_id": 1,
+                          "clinic_id": 1,
+                          "title": "Example value",
+                          "description": "Example value",
+                          "parent_folder_id": 1,
+                          "folder_type_id": 1,
+                          "is_deleted": true,
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "folder_path": "Example value",
+                          "partition_id": 1,
+                          "row_guid": 1,
+                          "folder_type": "Example value",
+                          "owner": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/doc/folder/{id}'
+    metadata:
+      groupName: PatientDOCFolder
+      groupDescription: ''
+      subgroup: DOCFolder
+      subgroupDescription: 'PatientDOCFolderController handles the CRUD operations for patient doc folder controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientdocfolder to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Title:
+        name: Title
+        description: optional.
+        required: false
+        example: '"Example Title"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: optional.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ParentFolderId:
+        name: ParentFolderId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ParentFolderId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderTypeId:
+        name: FolderTypeId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example FolderTypeId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderPath:
+        name: FolderPath
+        description: optional.
+        required: false
+        example: '"Example FolderPath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PartitionId:
+        name: PartitionId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PartitionId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RowGuid:
+        name: RowGuid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderType:
+        name: FolderType
+        description: optional.
+        required: false
+        example: '"Example FolderType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Owner:
+        name: Owner
+        description: optional.
+        required: false
+        example: '"Example Owner"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      Title: '"Example Title"'
+      Description: '"Example Description"'
+      ParentFolderId: '"Example ParentFolderId"'
+      FolderTypeId: '"Example FolderTypeId"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      FolderPath: '"Example FolderPath"'
+      PartitionId: '"Example PartitionId"'
+      RowGuid: '"1"'
+      FolderType: '"Example FolderType"'
+      Owner: '"Example Owner"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "folder": {
+                          "folder_id": 1,
+                          "clinic_id": 1,
+                          "title": "Example value",
+                          "description": "Example value",
+                          "parent_folder_id": 1,
+                          "folder_type_id": 1,
+                          "is_deleted": true,
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "folder_path": "Example value",
+                          "partition_id": 1,
+                          "row_guid": 1,
+                          "folder_type": "Example value",
+                          "owner": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

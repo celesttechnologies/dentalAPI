@@ -1,0 +1,440 @@
+name: ClinicChair
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/clinic/chair
+    metadata:
+      groupName: ClinicChair
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_chairs": [
+                          {
+                              "chair_id": 1,
+                              "clinic_id": 1,
+                              "title": "Example value",
+                              "description": "Example value",
+                              "is_deleted": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "rowguid": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/clinic/chair
+    metadata:
+      groupName: ClinicChair
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ChairID:
+        name: ChairID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ChairID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Title:
+        name: Title
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example Title"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      ChairID: '"Example ChairID"'
+      ClinicID: '"Example ClinicID"'
+      Title: '"Example Title"'
+      Description: '"Example Description"'
+      IsDeleted: true
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_chair": {
+                          "chair_id": 1,
+                          "clinic_id": 1,
+                          "title": "Example value",
+                          "description": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "rowguid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/clinic/chair/{clinicChair_ChairID}'
+    metadata:
+      groupName: ClinicChair
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clinicChair_ChairID:
+        name: clinicChair_ChairID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the clinicchair to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clinicChair_ChairID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ChairID:
+        name: ChairID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ChairID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Title:
+        name: Title
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example Title"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      ChairID: '"Example ChairID"'
+      ClinicID: '"Example ClinicID"'
+      Title: '"Example Title"'
+      Description: '"Example Description"'
+      IsDeleted: true
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_chair": {
+                          "chair_id": 1,
+                          "clinic_id": 1,
+                          "title": "Example value",
+                          "description": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "rowguid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,402 @@
+name: BankAccount
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/bank/accounts
+    metadata:
+      groupName: BankAccount
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "bankAccounts": [
+                          {
+                              "bank_account_id": 1,
+                              "clinic_id": 1,
+                              "bank_account_name": "Example Name",
+                              "account_number": "Example value",
+                              "branch": "Example value",
+                              "city": "Example value",
+                              "is_deleted": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "row_guid": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/bank/accounts
+    metadata:
+      groupName: BankAccount
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      BankAccountID:
+        name: BankAccountID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example BankAccountID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClientID:
+        name: ClientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AccountNumber:
+        name: AccountNumber
+        description: 'required. Maximum length: 100.'
+        required: false
+        example: '"Example AccountNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      BankName:
+        name: BankName
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example BankName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OpeningBalance:
+        name: OpeningBalance
+        description: 'required. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      BankAccountID: '"Example BankAccountID"'
+      ClientID: '"Example ClientID"'
+      AccountNumber: '"Example AccountNumber"'
+      BankName: '"Example BankName"'
+      OpeningBalance: 1.0
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "account": {
+                          "bank_account_id": 1,
+                          "clinic_id": 1,
+                          "bank_account_name": "Example Name",
+                          "account_number": "Example value",
+                          "branch": "Example value",
+                          "city": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/bank/accounts/{bankAccount_BankAccountID}'
+    metadata:
+      groupName: BankAccount
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      bankAccount_BankAccountID:
+        name: bankAccount_BankAccountID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the bankaccount to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      bankAccount_BankAccountID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      BankAccountID:
+        name: BankAccountID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example BankAccountID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClientID:
+        name: ClientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AccountNumber:
+        name: AccountNumber
+        description: 'optional. Maximum length: 100.'
+        required: false
+        example: '"Example AccountNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      BankName:
+        name: BankName
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example BankName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OpeningBalance:
+        name: OpeningBalance
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      BankAccountID: '"Example BankAccountID"'
+      ClientID: '"Example ClientID"'
+      AccountNumber: '"Example AccountNumber"'
+      BankName: '"Example BankName"'
+      OpeningBalance: 1.0
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "account": {
+                          "bank_account_id": 1,
+                          "clinic_id": 1,
+                          "bank_account_name": "Example Name",
+                          "account_number": "Example value",
+                          "branch": "Example value",
+                          "city": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

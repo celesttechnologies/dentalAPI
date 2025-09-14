@@ -1,0 +1,550 @@
+name: ECGMSubscriptionModel
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/ecg/subscription-model
+    metadata:
+      groupName: ECGMSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "subscriptions": [
+                          {
+                              "subscription_id": 1,
+                              "user_id": 1,
+                              "plan_id": 1,
+                              "start_date": "Example value",
+                              "end_date": "Example value",
+                              "status": "Example value",
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ecg/subscription-model
+    metadata:
+      groupName: ECGMSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      SubscriptionModelName:
+        name: SubscriptionModelName
+        description: required.
+        required: false
+        example: '"Example SubscriptionModelName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionPackageID:
+        name: SubscriptionPackageID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionPackageID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionTypeID:
+        name: SubscriptionTypeID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OrderNumber:
+        name: OrderNumber
+        description: required.
+        required: false
+        example: '"Example OrderNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UsersLimit:
+        name: UsersLimit
+        description: required.
+        required: false
+        example: '"Example UsersLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProvidersLimit:
+        name: ProvidersLimit
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientsLimit:
+        name: PatientsLimit
+        description: required.
+        required: false
+        example: '"Example PatientsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AppointmentsLimit:
+        name: AppointmentsLimit
+        description: required.
+        required: false
+        example: '"Example AppointmentsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      WAVisitsLimit:
+        name: WAVisitsLimit
+        description: required.
+        required: false
+        example: '"Example WAVisitsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentSpaceLimit:
+        name: DocumentSpaceLimit
+        description: required.
+        required: false
+        example: '"Example DocumentSpaceLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LicenseModuleCodeCSV:
+        name: LicenseModuleCodeCSV
+        description: required.
+        required: false
+        example: '"Example LicenseModuleCodeCSV"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: required.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      SubscriptionModelName: '"Example SubscriptionModelName"'
+      SubscriptionPackageID: '"Example SubscriptionPackageID"'
+      SubscriptionTypeID: '"Example SubscriptionTypeID"'
+      OrderNumber: '"Example OrderNumber"'
+      UsersLimit: '"Example UsersLimit"'
+      ProvidersLimit: '"1"'
+      PatientsLimit: '"Example PatientsLimit"'
+      AppointmentsLimit: '"Example AppointmentsLimit"'
+      WAVisitsLimit: '"Example WAVisitsLimit"'
+      DocumentSpaceLimit: '"Example DocumentSpaceLimit"'
+      LicenseModuleCodeCSV: '"Example LicenseModuleCodeCSV"'
+      IsActive: '"Example IsActive"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "subscription": {
+                          "subscription_id": 1,
+                          "user_id": 1,
+                          "plan_id": 1,
+                          "start_date": "Example value",
+                          "end_date": "Example value",
+                          "status": "Example value",
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/ecg/subscription-model/{eCGMSubscriptionModel_SubscriptionModelID}'
+    metadata:
+      groupName: ECGMSubscriptionModel
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      eCGMSubscriptionModel_SubscriptionModelID:
+        name: eCGMSubscriptionModel_SubscriptionModelID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the ecgmsubscriptionmodel to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      eCGMSubscriptionModel_SubscriptionModelID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      SubscriptionModelName:
+        name: SubscriptionModelName
+        description: optional.
+        required: false
+        example: '"Example SubscriptionModelName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionPackageID:
+        name: SubscriptionPackageID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionPackageID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubscriptionTypeID:
+        name: SubscriptionTypeID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example SubscriptionTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OrderNumber:
+        name: OrderNumber
+        description: optional.
+        required: false
+        example: '"Example OrderNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UsersLimit:
+        name: UsersLimit
+        description: optional.
+        required: false
+        example: '"Example UsersLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProvidersLimit:
+        name: ProvidersLimit
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientsLimit:
+        name: PatientsLimit
+        description: optional.
+        required: false
+        example: '"Example PatientsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AppointmentsLimit:
+        name: AppointmentsLimit
+        description: optional.
+        required: false
+        example: '"Example AppointmentsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      WAVisitsLimit:
+        name: WAVisitsLimit
+        description: optional.
+        required: false
+        example: '"Example WAVisitsLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentSpaceLimit:
+        name: DocumentSpaceLimit
+        description: optional.
+        required: false
+        example: '"Example DocumentSpaceLimit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LicenseModuleCodeCSV:
+        name: LicenseModuleCodeCSV
+        description: optional.
+        required: false
+        example: '"Example LicenseModuleCodeCSV"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: optional.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      SubscriptionModelName: '"Example SubscriptionModelName"'
+      SubscriptionPackageID: '"Example SubscriptionPackageID"'
+      SubscriptionTypeID: '"Example SubscriptionTypeID"'
+      OrderNumber: '"Example OrderNumber"'
+      UsersLimit: '"Example UsersLimit"'
+      ProvidersLimit: '"1"'
+      PatientsLimit: '"Example PatientsLimit"'
+      AppointmentsLimit: '"Example AppointmentsLimit"'
+      WAVisitsLimit: '"Example WAVisitsLimit"'
+      DocumentSpaceLimit: '"Example DocumentSpaceLimit"'
+      LicenseModuleCodeCSV: '"Example LicenseModuleCodeCSV"'
+      IsActive: '"Example IsActive"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "subscription": {
+                          "subscription_id": 1,
+                          "user_id": 1,
+                          "plan_id": 1,
+                          "start_date": "Example value",
+                          "end_date": "Example value",
+                          "status": "Example value",
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,319 @@
+name: SMSTemplatesTag
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/sms/template-tag
+    metadata:
+      groupName: SMSTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "sms_templates_tags": [
+                          []
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/sms/template-tag
+    metadata:
+      groupName: SMSTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      SMSTagCode:
+        name: SMSTagCode
+        description: required.
+        required: false
+        example: '"Example SMSTagCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SMSTagDescription:
+        name: SMSTagDescription
+        description: required.
+        required: false
+        example: '"Example SMSTagDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DefaultValue:
+        name: DefaultValue
+        description: required.
+        required: false
+        example: '"Example DefaultValue"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SMSTagQuery:
+        name: SMSTagQuery
+        description: required.
+        required: false
+        example: '"Example SMSTagQuery"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      SMSTagCode: '"Example SMSTagCode"'
+      SMSTagDescription: '"Example SMSTagDescription"'
+      DefaultValue: '"Example DefaultValue"'
+      SMSTagQuery: '"Example SMSTagQuery"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "sms_templates_tag": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/sms/template-tag/{sMSTemplatesTag_SMSTemplatesTagID}'
+    metadata:
+      groupName: SMSTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      sMSTemplatesTag_SMSTemplatesTagID:
+        name: sMSTemplatesTag_SMSTemplatesTagID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the smstemplatestag to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      sMSTemplatesTag_SMSTemplatesTagID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      SMSTagCode:
+        name: SMSTagCode
+        description: optional.
+        required: false
+        example: '"Example SMSTagCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SMSTagDescription:
+        name: SMSTagDescription
+        description: optional.
+        required: false
+        example: '"Example SMSTagDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DefaultValue:
+        name: DefaultValue
+        description: optional.
+        required: false
+        example: '"Example DefaultValue"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SMSTagQuery:
+        name: SMSTagQuery
+        description: optional.
+        required: false
+        example: '"Example SMSTagQuery"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      SMSTagCode: '"Example SMSTagCode"'
+      SMSTagDescription: '"Example SMSTagDescription"'
+      DefaultValue: '"Example DefaultValue"'
+      SMSTagQuery: '"Example SMSTagQuery"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "sms_templates_tag": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

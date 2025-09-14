@@ -1,0 +1,587 @@
+name: ClinicCommunicationMaster
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/clinic/communication-master
+    metadata:
+      groupName: ClinicCommunicationMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_communication_masters": [
+                          {
+                              "clinic_communication_master_id": 1,
+                              "communication_master_type_id": 1,
+                              "communication_master_sub_type_id": 1,
+                              "communication_master_sub_type_code": "Example value",
+                              "category": "Example value",
+                              "description": "Example value",
+                              "communication_execution_type": "Example value",
+                              "attribute1": "Example value",
+                              "default_attribute_value1": "Example value",
+                              "attribute2": "Example value",
+                              "default_attribute_value2": "Example value",
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/clinic/communication-master
+    metadata:
+      groupName: ClinicCommunicationMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicCommunicationMasterID:
+        name: ClinicCommunicationMasterID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicCommunicationMasterID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CommunicationMasterTypeID:
+        name: CommunicationMasterTypeID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationMasterSubTypeID:
+        name: CommunicationMasterSubTypeID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationMasterSubTypeCode:
+        name: CommunicationMasterSubTypeCode
+        description: 'optional. nullable. Maximum length: 50.'
+        required: false
+        example: '"Example CommunicationMasterSubTypeCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Category:
+        name: Category
+        description: 'optional. nullable. Maximum length: 100.'
+        required: false
+        example: '"Example Category"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationExecutionType:
+        name: CommunicationExecutionType
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Attribute1:
+        name: Attribute1
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example Attribute1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      DefaultAttributeValue1:
+        name: DefaultAttributeValue1
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example DefaultAttributeValue1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Attribute2:
+        name: Attribute2
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example Attribute2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      DefaultAttributeValue2:
+        name: DefaultAttributeValue2
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example DefaultAttributeValue2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      ClinicCommunicationMasterID: '"Example ClinicCommunicationMasterID"'
+      CommunicationMasterTypeID: 1.0
+      CommunicationMasterSubTypeID: 1.0
+      CommunicationMasterSubTypeCode: '"Example CommunicationMasterSubTypeCode"'
+      Category: '"Example Category"'
+      Description: '"Example Description"'
+      CommunicationExecutionType: 1.0
+      Attribute1: '"Example Attribute1"'
+      DefaultAttributeValue1: '"Example DefaultAttributeValue1"'
+      Attribute2: '"Example Attribute2"'
+      DefaultAttributeValue2: '"Example DefaultAttributeValue2"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_communication_master": {
+                          "clinic_communication_master_id": 1,
+                          "communication_master_type_id": 1,
+                          "communication_master_sub_type_id": 1,
+                          "communication_master_sub_type_code": "Example value",
+                          "category": "Example value",
+                          "description": "Example value",
+                          "communication_execution_type": "Example value",
+                          "attribute1": "Example value",
+                          "default_attribute_value1": "Example value",
+                          "attribute2": "Example value",
+                          "default_attribute_value2": "Example value",
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/clinic/communication-master/{clinicCommunicationMaster_ClinicCommunicationMasterID}'
+    metadata:
+      groupName: ClinicCommunicationMaster
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      clinicCommunicationMaster_ClinicCommunicationMasterID:
+        name: clinicCommunicationMaster_ClinicCommunicationMasterID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the cliniccommunicationmaster to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      clinicCommunicationMaster_ClinicCommunicationMasterID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicCommunicationMasterID:
+        name: ClinicCommunicationMasterID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicCommunicationMasterID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CommunicationMasterTypeID:
+        name: CommunicationMasterTypeID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationMasterSubTypeID:
+        name: CommunicationMasterSubTypeID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationMasterSubTypeCode:
+        name: CommunicationMasterSubTypeCode
+        description: 'optional. nullable. Maximum length: 50.'
+        required: false
+        example: '"Example CommunicationMasterSubTypeCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Category:
+        name: Category
+        description: 'optional. nullable. Maximum length: 100.'
+        required: false
+        example: '"Example Category"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Description:
+        name: Description
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CommunicationExecutionType:
+        name: CommunicationExecutionType
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Attribute1:
+        name: Attribute1
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example Attribute1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      DefaultAttributeValue1:
+        name: DefaultAttributeValue1
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example DefaultAttributeValue1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      Attribute2:
+        name: Attribute2
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example Attribute2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      DefaultAttributeValue2:
+        name: DefaultAttributeValue2
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example DefaultAttributeValue2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      ClinicCommunicationMasterID: '"Example ClinicCommunicationMasterID"'
+      CommunicationMasterTypeID: 1.0
+      CommunicationMasterSubTypeID: 1.0
+      CommunicationMasterSubTypeCode: '"Example CommunicationMasterSubTypeCode"'
+      Category: '"Example Category"'
+      Description: '"Example Description"'
+      CommunicationExecutionType: 1.0
+      Attribute1: '"Example Attribute1"'
+      DefaultAttributeValue1: '"Example DefaultAttributeValue1"'
+      Attribute2: '"Example Attribute2"'
+      DefaultAttributeValue2: '"Example DefaultAttributeValue2"'
+      CreatedOn: '"Example CreatedOn"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "clinic_communication_master": {
+                          "clinic_communication_master_id": 1,
+                          "communication_master_type_id": 1,
+                          "communication_master_sub_type_id": 1,
+                          "communication_master_sub_type_code": "Example value",
+                          "category": "Example value",
+                          "description": "Example value",
+                          "communication_execution_type": "Example value",
+                          "attribute1": "Example value",
+                          "default_attribute_value1": "Example value",
+                          "attribute2": "Example value",
+                          "default_attribute_value2": "Example value",
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

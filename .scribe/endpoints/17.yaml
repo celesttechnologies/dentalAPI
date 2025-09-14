@@ -1,0 +1,490 @@
+name: PatientExamination
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/examination'
+    metadata:
+      groupName: PatientExamination
+      groupDescription: ''
+      subgroup: Examination
+      subgroupDescription: 'PatientExaminationController handles the CRUD operations for patient examination controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "examinations": [
+                          {
+                              "examination_id": 1,
+                              "patient_id": 1,
+                              "date_of_diagnosis": "Example value",
+                              "provider_id": 1,
+                              "chief_complaint": "Example value",
+                              "patient_diagnosis_notes": "Example value",
+                              "is_deleted": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "diagnosis": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/examination'
+    metadata:
+      groupName: PatientExamination
+      groupDescription: ''
+      subgroup: Examination
+      subgroupDescription: 'PatientExaminationController handles the CRUD operations for patient examination controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DateOfDiagnosis:
+        name: DateOfDiagnosis
+        description: 'required. date.'
+        required: false
+        example: '"Example DateOfDiagnosis"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ChiefComplaint:
+        name: ChiefComplaint
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example ChiefComplaint"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      PatientDiagnosisNotes:
+        name: PatientDiagnosisNotes
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example PatientDiagnosisNotes"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      diagnosis:
+        name: diagnosis
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      diagnosis.TreatmentTypeID:
+        name: diagnosis.TreatmentTypeID
+        description: required.
+        required: false
+        example: '"Example Diagnosis.TreatmentTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis.Description:
+        name: diagnosis.Description
+        description: required.
+        required: false
+        example: '"Example Diagnosis.Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis.TeethTreatments:
+        name: diagnosis.TeethTreatments
+        description: required.
+        required: false
+        example: '"Example Diagnosis.TeethTreatments"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      DateOfDiagnosis: '"Example DateOfDiagnosis"'
+      ProviderID: '"1"'
+      ChiefComplaint: '"Example ChiefComplaint"'
+      PatientDiagnosisNotes: '"Example PatientDiagnosisNotes"'
+      diagnosis:
+        TreatmentTypeID: '"Example Diagnosis.TreatmentTypeID"'
+        Description: '"Example Diagnosis.Description"'
+        TeethTreatments: '"Example Diagnosis.TeethTreatments"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "examination": {
+                          "examination_id": 1,
+                          "patient_id": 1,
+                          "date_of_diagnosis": "Example value",
+                          "provider_id": 1,
+                          "chief_complaint": "Example value",
+                          "patient_diagnosis_notes": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "diagnosis": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/examination/{id}'
+    metadata:
+      groupName: PatientExamination
+      groupDescription: ''
+      subgroup: Examination
+      subgroupDescription: 'PatientExaminationController handles the CRUD operations for patient examination controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientexamination to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DateOfDiagnosis:
+        name: DateOfDiagnosis
+        description: 'optional. date.'
+        required: false
+        example: '"Example DateOfDiagnosis"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ChiefComplaint:
+        name: ChiefComplaint
+        description: optional.
+        required: false
+        example: '"Example ChiefComplaint"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientDiagnosisNotes:
+        name: PatientDiagnosisNotes
+        description: optional.
+        required: false
+        example: '"Example PatientDiagnosisNotes"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis:
+        name: diagnosis
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      diagnosis.TreatmentTypeID:
+        name: diagnosis.TreatmentTypeID
+        description: optional.
+        required: false
+        example: '"Example Diagnosis.TreatmentTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis.Description:
+        name: diagnosis.Description
+        description: optional.
+        required: false
+        example: '"Example Diagnosis.Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis.TeethTreatments:
+        name: diagnosis.TeethTreatments
+        description: optional.
+        required: false
+        example: '"Example Diagnosis.TeethTreatments"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      diagnosis.IsDeleted:
+        name: diagnosis.IsDeleted
+        description: optional.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      DateOfDiagnosis: '"Example DateOfDiagnosis"'
+      ProviderID: '"1"'
+      ChiefComplaint: '"Example ChiefComplaint"'
+      PatientDiagnosisNotes: '"Example PatientDiagnosisNotes"'
+      IsDeleted: true
+      diagnosis:
+        TreatmentTypeID: '"Example Diagnosis.TreatmentTypeID"'
+        Description: '"Example Diagnosis.Description"'
+        TeethTreatments: '"Example Diagnosis.TeethTreatments"'
+        IsDeleted: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "examination": {
+                          "examination_id": 1,
+                          "patient_id": 1,
+                          "date_of_diagnosis": "Example value",
+                          "provider_id": 1,
+                          "chief_complaint": "Example value",
+                          "patient_diagnosis_notes": "Example value",
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "diagnosis": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

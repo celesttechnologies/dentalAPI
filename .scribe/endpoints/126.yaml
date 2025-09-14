@@ -1,0 +1,418 @@
+name: JobBatch
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/job/batch
+    metadata:
+      groupName: JobBatch
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "job_batches": [
+                          {
+                              "id": 1,
+                              "name": "Example Name",
+                              "total_jobs": "Example value",
+                              "pending_jobs": "Example value",
+                              "failed_jobs": "Example value",
+                              "failed_job_ids": 1,
+                              "options": "Example value",
+                              "cancelled_at": "Example value",
+                              "created_at": "2025-05-19 04:57:26",
+                              "finished_at": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/job/batch
+    metadata:
+      groupName: JobBatch
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: required.
+        required: false
+        example: '"John Doe"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      total_jobs:
+        name: total_jobs
+        description: required.
+        required: false
+        example: '"Example Total jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      pending_jobs:
+        name: pending_jobs
+        description: required.
+        required: false
+        example: '"Example Pending jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      failed_jobs:
+        name: failed_jobs
+        description: required.
+        required: false
+        example: '"Example Failed jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      failed_job_ids:
+        name: failed_job_ids
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      options:
+        name: options
+        description: required.
+        required: false
+        example: '"Example Options"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      cancelled_at:
+        name: cancelled_at
+        description: required.
+        required: false
+        example: '"Example Cancelled at"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      finished_at:
+        name: finished_at
+        description: required.
+        required: false
+        example: '"Example Finished at"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: '"John Doe"'
+      total_jobs: '"Example Total jobs"'
+      pending_jobs: '"Example Pending jobs"'
+      failed_jobs: '"Example Failed jobs"'
+      failed_job_ids: '"1"'
+      options: '"Example Options"'
+      cancelled_at: '"Example Cancelled at"'
+      finished_at: '"Example Finished at"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "batch": {
+                          "id": 1,
+                          "name": "Example Name",
+                          "total_jobs": "Example value",
+                          "pending_jobs": "Example value",
+                          "failed_jobs": "Example value",
+                          "failed_job_ids": 1,
+                          "options": "Example value",
+                          "cancelled_at": "Example value",
+                          "created_at": "2025-05-19 04:57:26",
+                          "finished_at": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/job/batch/{jobBatch_id}'
+    metadata:
+      groupName: JobBatch
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      jobBatch_id:
+        name: jobBatch_id
+        description: 'The ID of the jobBatch.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the jobbatch to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      jobBatch_id: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: optional.
+        required: false
+        example: '"John Doe"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      total_jobs:
+        name: total_jobs
+        description: optional.
+        required: false
+        example: '"Example Total jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      pending_jobs:
+        name: pending_jobs
+        description: optional.
+        required: false
+        example: '"Example Pending jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      failed_jobs:
+        name: failed_jobs
+        description: optional.
+        required: false
+        example: '"Example Failed jobs"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      failed_job_ids:
+        name: failed_job_ids
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      options:
+        name: options
+        description: optional.
+        required: false
+        example: '"Example Options"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      cancelled_at:
+        name: cancelled_at
+        description: optional.
+        required: false
+        example: '"Example Cancelled at"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      finished_at:
+        name: finished_at
+        description: optional.
+        required: false
+        example: '"Example Finished at"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: '"John Doe"'
+      total_jobs: '"Example Total jobs"'
+      pending_jobs: '"Example Pending jobs"'
+      failed_jobs: '"Example Failed jobs"'
+      failed_job_ids: '"1"'
+      options: '"Example Options"'
+      cancelled_at: '"Example Cancelled at"'
+      finished_at: '"Example Finished at"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "batch": {
+                          "id": 1,
+                          "name": "Example Name",
+                          "total_jobs": "Example value",
+                          "pending_jobs": "Example value",
+                          "failed_jobs": "Example value",
+                          "failed_job_ids": 1,
+                          "options": "Example value",
+                          "cancelled_at": "Example value",
+                          "created_at": "2025-05-19 04:57:26",
+                          "finished_at": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

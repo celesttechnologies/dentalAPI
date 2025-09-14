@@ -1,0 +1,715 @@
+name: DOCVersion
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/doc-version
+    metadata:
+      groupName: DOCVersion
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "doc_versions": [
+                          {
+                              "id": 1,
+                              "document_id": 1,
+                              "version_number": "Example value",
+                              "category_id": 1,
+                              "sub_category_id": 1,
+                              "status_id": 1,
+                              "patient_id": 1,
+                              "document_type": "Example value",
+                              "description": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "publish_on": "Example value",
+                              "expiration_on": "Example value",
+                              "related_version_id": 1,
+                              "related_version_number": "Example value",
+                              "is_deleted": true,
+                              "is_expired": true,
+                              "file_name": "Example Name",
+                              "uploaded_file_path": "Example value",
+                              "physical_file_path": "Example value",
+                              "ref_id1": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/doc-version
+    metadata:
+      groupName: DOCVersion
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      DocumentID:
+        name: DocumentID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example DocumentID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VersionNumber:
+        name: VersionNumber
+        description: required.
+        required: false
+        example: '"Example VersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CategoryID:
+        name: CategoryID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example CategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubCategoryID:
+        name: SubCategoryID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example SubCategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusID:
+        name: StatusID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example StatusID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentType:
+        name: DocumentType
+        description: required.
+        required: false
+        example: '"Example DocumentType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: required.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishOn:
+        name: PublishOn
+        description: required.
+        required: false
+        example: '"Example PublishOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpirationOn:
+        name: ExpirationOn
+        description: required.
+        required: false
+        example: '"Example ExpirationOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionID:
+        name: RelatedVersionID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RelatedVersionID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionNumber:
+        name: RelatedVersionNumber
+        description: required.
+        required: false
+        example: '"Example RelatedVersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsExpired:
+        name: IsExpired
+        description: required.
+        required: false
+        example: '"Example IsExpired"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileName:
+        name: FileName
+        description: required.
+        required: false
+        example: '"Example FileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UploadedFilePath:
+        name: UploadedFilePath
+        description: required.
+        required: false
+        example: '"Example UploadedFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PhysicalFilePath:
+        name: PhysicalFilePath
+        description: required.
+        required: false
+        example: '"Example PhysicalFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId1:
+        name: RefId1
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RefId1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      DocumentID: '"Example DocumentID"'
+      VersionNumber: '"Example VersionNumber"'
+      CategoryID: '"Example CategoryID"'
+      SubCategoryID: '"Example SubCategoryID"'
+      StatusID: '"Example StatusID"'
+      PatientID: '"Example PatientID"'
+      DocumentType: '"Example DocumentType"'
+      Description: '"Example Description"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      PublishOn: '"Example PublishOn"'
+      ExpirationOn: '"Example ExpirationOn"'
+      RelatedVersionID: '"Example RelatedVersionID"'
+      RelatedVersionNumber: '"Example RelatedVersionNumber"'
+      IsDeleted: '"Example IsDeleted"'
+      IsExpired: '"Example IsExpired"'
+      FileName: '"Example FileName"'
+      UploadedFilePath: '"Example UploadedFilePath"'
+      PhysicalFilePath: '"Example PhysicalFilePath"'
+      RefId1: '"Example RefId1"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "doc_version": {
+                          "id": 1,
+                          "document_id": 1,
+                          "version_number": "Example value",
+                          "category_id": 1,
+                          "sub_category_id": 1,
+                          "status_id": 1,
+                          "patient_id": 1,
+                          "document_type": "Example value",
+                          "description": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "publish_on": "Example value",
+                          "expiration_on": "Example value",
+                          "related_version_id": 1,
+                          "related_version_number": "Example value",
+                          "is_deleted": true,
+                          "is_expired": true,
+                          "file_name": "Example Name",
+                          "uploaded_file_path": "Example value",
+                          "physical_file_path": "Example value",
+                          "ref_id1": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/doc-version/{dOCVersion_ID}'
+    metadata:
+      groupName: DOCVersion
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      dOCVersion_ID:
+        name: dOCVersion_ID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the docversion to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      dOCVersion_ID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      DocumentID:
+        name: DocumentID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example DocumentID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VersionNumber:
+        name: VersionNumber
+        description: optional.
+        required: false
+        example: '"Example VersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CategoryID:
+        name: CategoryID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example CategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SubCategoryID:
+        name: SubCategoryID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example SubCategoryID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusID:
+        name: StatusID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example StatusID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentType:
+        name: DocumentType
+        description: optional.
+        required: false
+        example: '"Example DocumentType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: optional.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishOn:
+        name: PublishOn
+        description: optional.
+        required: false
+        example: '"Example PublishOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpirationOn:
+        name: ExpirationOn
+        description: optional.
+        required: false
+        example: '"Example ExpirationOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionID:
+        name: RelatedVersionID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RelatedVersionID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionNumber:
+        name: RelatedVersionNumber
+        description: optional.
+        required: false
+        example: '"Example RelatedVersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsExpired:
+        name: IsExpired
+        description: optional.
+        required: false
+        example: '"Example IsExpired"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileName:
+        name: FileName
+        description: optional.
+        required: false
+        example: '"Example FileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UploadedFilePath:
+        name: UploadedFilePath
+        description: optional.
+        required: false
+        example: '"Example UploadedFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PhysicalFilePath:
+        name: PhysicalFilePath
+        description: optional.
+        required: false
+        example: '"Example PhysicalFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId1:
+        name: RefId1
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RefId1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      DocumentID: '"Example DocumentID"'
+      VersionNumber: '"Example VersionNumber"'
+      CategoryID: '"Example CategoryID"'
+      SubCategoryID: '"Example SubCategoryID"'
+      StatusID: '"Example StatusID"'
+      PatientID: '"Example PatientID"'
+      DocumentType: '"Example DocumentType"'
+      Description: '"Example Description"'
+      CreatedBy: '"Example CreatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      PublishOn: '"Example PublishOn"'
+      ExpirationOn: '"Example ExpirationOn"'
+      RelatedVersionID: '"Example RelatedVersionID"'
+      RelatedVersionNumber: '"Example RelatedVersionNumber"'
+      IsDeleted: '"Example IsDeleted"'
+      IsExpired: '"Example IsExpired"'
+      FileName: '"Example FileName"'
+      UploadedFilePath: '"Example UploadedFilePath"'
+      PhysicalFilePath: '"Example PhysicalFilePath"'
+      RefId1: '"Example RefId1"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "doc_version": {
+                          "id": 1,
+                          "document_id": 1,
+                          "version_number": "Example value",
+                          "category_id": 1,
+                          "sub_category_id": 1,
+                          "status_id": 1,
+                          "patient_id": 1,
+                          "document_type": "Example value",
+                          "description": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "publish_on": "Example value",
+                          "expiration_on": "Example value",
+                          "related_version_id": 1,
+                          "related_version_number": "Example value",
+                          "is_deleted": true,
+                          "is_expired": true,
+                          "file_name": "Example Name",
+                          "uploaded_file_path": "Example value",
+                          "physical_file_path": "Example value",
+                          "ref_id1": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,455 @@
+name: PatientPrescription
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/prescription'
+    metadata:
+      groupName: PatientPrescription
+      groupDescription: ''
+      subgroup: Prescriptions
+      subgroupDescription: 'PatientPrescriptionController handles the CRUD operations for patient prescriptions controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "patient_prescriptions": [
+                          {
+                              "patient_prescription_id": 1,
+                              "patient_id": 1,
+                              "provider_id": 1,
+                              "prescription_note": "Example value",
+                              "date_of_prescription": "Example value",
+                              "next_follow_up": "Example value",
+                              "investigation_advised_ids": 1,
+                              "patient_investigation_id": 1,
+                              "is_deleted": true,
+                              "created_on": "Example value",
+                              "created_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "rowguid": 1,
+                              "is_followup_sms_required": true
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/prescription'
+    metadata:
+      groupName: PatientPrescription
+      groupDescription: ''
+      subgroup: Prescriptions
+      subgroupDescription: 'PatientPrescriptionController handles the CRUD operations for patient prescriptions controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PrescriptionNote:
+        name: PrescriptionNote
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PrescriptionNote"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DateOfPrescription:
+        name: DateOfPrescription
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example DateOfPrescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      NextFollowUp:
+        name: NextFollowUp
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example NextFollowUp"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InvestigationAdvisedIDCSV:
+        name: InvestigationAdvisedIDCSV
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example InvestigationAdvisedIDCSV"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      PatientInvestigationID:
+        name: PatientInvestigationID
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PatientInvestigationID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      ProviderID: '"1"'
+      PrescriptionNote: '"Example PrescriptionNote"'
+      DateOfPrescription: '"Example DateOfPrescription"'
+      NextFollowUp: '"Example NextFollowUp"'
+      InvestigationAdvisedIDCSV: '"Example InvestigationAdvisedIDCSV"'
+      PatientInvestigationID: '"Example PatientInvestigationID"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "prescription": {
+                          "patient_prescription_id": 1,
+                          "patient_id": 1,
+                          "provider_id": 1,
+                          "prescription_note": "Example value",
+                          "date_of_prescription": "Example value",
+                          "next_follow_up": "Example value",
+                          "investigation_advised_ids": 1,
+                          "patient_investigation_id": 1,
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "rowguid": 1,
+                          "is_followup_sms_required": true
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/prescription/{id}'
+    metadata:
+      groupName: PatientPrescription
+      groupDescription: ''
+      subgroup: Prescriptions
+      subgroupDescription: 'PatientPrescriptionController handles the CRUD operations for patient prescriptions controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientprescription to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PrescriptionNote:
+        name: PrescriptionNote
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PrescriptionNote"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DateOfPrescription:
+        name: DateOfPrescription
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example DateOfPrescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      NextFollowUp:
+        name: NextFollowUp
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example NextFollowUp"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InvestigationAdvisedIDCSV:
+        name: InvestigationAdvisedIDCSV
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example InvestigationAdvisedIDCSV"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      PatientInvestigationID:
+        name: PatientInvestigationID
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example PatientInvestigationID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      ProviderID: '"1"'
+      PrescriptionNote: '"Example PrescriptionNote"'
+      DateOfPrescription: '"Example DateOfPrescription"'
+      NextFollowUp: '"Example NextFollowUp"'
+      InvestigationAdvisedIDCSV: '"Example InvestigationAdvisedIDCSV"'
+      PatientInvestigationID: '"Example PatientInvestigationID"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "prescription": {
+                          "patient_prescription_id": 1,
+                          "patient_id": 1,
+                          "provider_id": 1,
+                          "prescription_note": "Example value",
+                          "date_of_prescription": "Example value",
+                          "next_follow_up": "Example value",
+                          "investigation_advised_ids": 1,
+                          "patient_investigation_id": 1,
+                          "is_deleted": true,
+                          "created_on": "Example value",
+                          "created_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "rowguid": 1,
+                          "is_followup_sms_required": true
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

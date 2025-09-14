@@ -1,0 +1,912 @@
+name: PatientDOCFile
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/doc/file'
+    metadata:
+      groupName: PatientDOCFile
+      groupDescription: ''
+      subgroup: DOCFile
+      subgroupDescription: 'PatientDOCFileController handles the CRUD operations for patient doc file controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "doc_files": [
+                          {
+                              "id": 1,
+                              "patient_id": 1,
+                              "clinic_id": 1,
+                              "document_id": 1,
+                              "version_number": "Example value",
+                              "related_version_id": 1,
+                              "related_version_number": "Example value",
+                              "folder_id": 1,
+                              "status_id": 1,
+                              "description": "Example value",
+                              "file_name": "Example Name",
+                              "virtual_file_path": "Example value",
+                              "physical_file_path": "Example value",
+                              "created_by": "Example value",
+                              "created_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "is_deleted": true,
+                              "publish_on": "Example value",
+                              "expiration_on": "Example value",
+                              "ref_id": 1,
+                              "ref_id1": 1,
+                              "file_size": "Example value",
+                              "file_type": "Example value",
+                              "uploaded_file_name": "Example Name",
+                              "file_thumb_image": "Example value",
+                              "reference_no": "Example value",
+                              "row_guid": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/doc/file'
+    metadata:
+      groupName: PatientDOCFile
+      groupDescription: ''
+      subgroup: DOCFile
+      subgroupDescription: 'PatientDOCFileController handles the CRUD operations for patient doc file controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentID:
+        name: DocumentID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example DocumentID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VersionNumber:
+        name: VersionNumber
+        description: required.
+        required: false
+        example: '"Example VersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionID:
+        name: RelatedVersionID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RelatedVersionID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionNumber:
+        name: RelatedVersionNumber
+        description: required.
+        required: false
+        example: '"Example RelatedVersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderId:
+        name: FolderId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example FolderId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusID:
+        name: StatusID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example StatusID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: required.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileName:
+        name: FileName
+        description: required.
+        required: false
+        example: '"Example FileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VirtualFilePath:
+        name: VirtualFilePath
+        description: required.
+        required: false
+        example: '"Example VirtualFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PhysicalFilePath:
+        name: PhysicalFilePath
+        description: required.
+        required: false
+        example: '"Example PhysicalFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishOn:
+        name: PublishOn
+        description: required.
+        required: false
+        example: '"Example PublishOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpirationOn:
+        name: ExpirationOn
+        description: required.
+        required: false
+        example: '"Example ExpirationOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId:
+        name: RefId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RefId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId1:
+        name: RefId1
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example RefId1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileSize:
+        name: FileSize
+        description: required.
+        required: false
+        example: '"Example FileSize"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileType:
+        name: FileType
+        description: required.
+        required: false
+        example: '"Example FileType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UploadedFileName:
+        name: UploadedFileName
+        description: required.
+        required: false
+        example: '"Example UploadedFileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileThumbImage:
+        name: FileThumbImage
+        description: required.
+        required: false
+        example: '"Example FileThumbImage"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReferenceNo:
+        name: ReferenceNo
+        description: required.
+        required: false
+        example: '"Example ReferenceNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      ClinicID: '"Example ClinicID"'
+      DocumentID: '"Example DocumentID"'
+      VersionNumber: '"Example VersionNumber"'
+      RelatedVersionID: '"Example RelatedVersionID"'
+      RelatedVersionNumber: '"Example RelatedVersionNumber"'
+      FolderId: '"Example FolderId"'
+      StatusID: '"Example StatusID"'
+      Description: '"Example Description"'
+      FileName: '"Example FileName"'
+      VirtualFilePath: '"Example VirtualFilePath"'
+      PhysicalFilePath: '"Example PhysicalFilePath"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      IsDeleted: '"Example IsDeleted"'
+      PublishOn: '"Example PublishOn"'
+      ExpirationOn: '"Example ExpirationOn"'
+      RefId: '"Example RefId"'
+      RefId1: '"Example RefId1"'
+      FileSize: '"Example FileSize"'
+      FileType: '"Example FileType"'
+      UploadedFileName: '"Example UploadedFileName"'
+      FileThumbImage: '"Example FileThumbImage"'
+      ReferenceNo: '"Example ReferenceNo"'
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "docFile": {
+                          "id": 1,
+                          "patient_id": 1,
+                          "clinic_id": 1,
+                          "document_id": 1,
+                          "version_number": "Example value",
+                          "related_version_id": 1,
+                          "related_version_number": "Example value",
+                          "folder_id": 1,
+                          "status_id": 1,
+                          "description": "Example value",
+                          "file_name": "Example Name",
+                          "virtual_file_path": "Example value",
+                          "physical_file_path": "Example value",
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "is_deleted": true,
+                          "publish_on": "Example value",
+                          "expiration_on": "Example value",
+                          "ref_id": 1,
+                          "ref_id1": 1,
+                          "file_size": "Example value",
+                          "file_type": "Example value",
+                          "uploaded_file_name": "Example Name",
+                          "file_thumb_image": "Example value",
+                          "reference_no": "Example value",
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/doc/file/{id}'
+    metadata:
+      groupName: PatientDOCFile
+      groupDescription: ''
+      subgroup: DOCFile
+      subgroupDescription: 'PatientDOCFileController handles the CRUD operations for patient doc file controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientdocfile to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DocumentID:
+        name: DocumentID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example DocumentID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VersionNumber:
+        name: VersionNumber
+        description: optional.
+        required: false
+        example: '"Example VersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionID:
+        name: RelatedVersionID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RelatedVersionID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RelatedVersionNumber:
+        name: RelatedVersionNumber
+        description: optional.
+        required: false
+        example: '"Example RelatedVersionNumber"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FolderId:
+        name: FolderId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example FolderId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusID:
+        name: StatusID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example StatusID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: optional.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileName:
+        name: FileName
+        description: optional.
+        required: false
+        example: '"Example FileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      VirtualFilePath:
+        name: VirtualFilePath
+        description: optional.
+        required: false
+        example: '"Example VirtualFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PhysicalFilePath:
+        name: PhysicalFilePath
+        description: optional.
+        required: false
+        example: '"Example PhysicalFilePath"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PublishOn:
+        name: PublishOn
+        description: optional.
+        required: false
+        example: '"Example PublishOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpirationOn:
+        name: ExpirationOn
+        description: optional.
+        required: false
+        example: '"Example ExpirationOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId:
+        name: RefId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RefId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RefId1:
+        name: RefId1
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example RefId1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileSize:
+        name: FileSize
+        description: optional.
+        required: false
+        example: '"Example FileSize"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileType:
+        name: FileType
+        description: optional.
+        required: false
+        example: '"Example FileType"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UploadedFileName:
+        name: UploadedFileName
+        description: optional.
+        required: false
+        example: '"Example UploadedFileName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      FileThumbImage:
+        name: FileThumbImage
+        description: optional.
+        required: false
+        example: '"Example FileThumbImage"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReferenceNo:
+        name: ReferenceNo
+        description: optional.
+        required: false
+        example: '"Example ReferenceNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      ClinicID: '"Example ClinicID"'
+      DocumentID: '"Example DocumentID"'
+      VersionNumber: '"Example VersionNumber"'
+      RelatedVersionID: '"Example RelatedVersionID"'
+      RelatedVersionNumber: '"Example RelatedVersionNumber"'
+      FolderId: '"Example FolderId"'
+      StatusID: '"Example StatusID"'
+      Description: '"Example Description"'
+      FileName: '"Example FileName"'
+      VirtualFilePath: '"Example VirtualFilePath"'
+      PhysicalFilePath: '"Example PhysicalFilePath"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      IsDeleted: '"Example IsDeleted"'
+      PublishOn: '"Example PublishOn"'
+      ExpirationOn: '"Example ExpirationOn"'
+      RefId: '"Example RefId"'
+      RefId1: '"Example RefId1"'
+      FileSize: '"Example FileSize"'
+      FileType: '"Example FileType"'
+      UploadedFileName: '"Example UploadedFileName"'
+      FileThumbImage: '"Example FileThumbImage"'
+      ReferenceNo: '"Example ReferenceNo"'
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "docFile": {
+                          "id": 1,
+                          "patient_id": 1,
+                          "clinic_id": 1,
+                          "document_id": 1,
+                          "version_number": "Example value",
+                          "related_version_id": 1,
+                          "related_version_number": "Example value",
+                          "folder_id": 1,
+                          "status_id": 1,
+                          "description": "Example value",
+                          "file_name": "Example Name",
+                          "virtual_file_path": "Example value",
+                          "physical_file_path": "Example value",
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "is_deleted": true,
+                          "publish_on": "Example value",
+                          "expiration_on": "Example value",
+                          "ref_id": 1,
+                          "ref_id1": 1,
+                          "file_size": "Example value",
+                          "file_type": "Example value",
+                          "uploaded_file_name": "Example Name",
+                          "file_thumb_image": "Example value",
+                          "reference_no": "Example value",
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

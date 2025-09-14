@@ -1,0 +1,319 @@
+name: AspnetProfile
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/aspnet/profile
+    metadata:
+      groupName: AspnetProfile
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "aspnetProfile": [
+                          []
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/aspnet/profile
+    metadata:
+      groupName: AspnetProfile
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      UserId:
+        name: UserId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example UserId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyNames:
+        name: PropertyNames
+        description: required.
+        required: false
+        example: '"Example PropertyNames"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyValuesString:
+        name: PropertyValuesString
+        description: required.
+        required: false
+        example: '"Example PropertyValuesString"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyValuesBinary:
+        name: PropertyValuesBinary
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example PropertyValuesBinary"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedDate:
+        name: LastUpdatedDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      UserId: '"Example UserId"'
+      PropertyNames: '"Example PropertyNames"'
+      PropertyValuesString: '"Example PropertyValuesString"'
+      PropertyValuesBinary: '"Example PropertyValuesBinary"'
+      LastUpdatedDate: '"Example LastUpdatedDate"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "profile": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/aspnet/profile/{aspnetProfile_UserId}'
+    metadata:
+      groupName: AspnetProfile
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      aspnetProfile_UserId:
+        name: aspnetProfile_UserId
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the aspnetprofile to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      aspnetProfile_UserId: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      UserId:
+        name: UserId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example UserId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyNames:
+        name: PropertyNames
+        description: optional.
+        required: false
+        example: '"Example PropertyNames"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyValuesString:
+        name: PropertyValuesString
+        description: optional.
+        required: false
+        example: '"Example PropertyValuesString"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PropertyValuesBinary:
+        name: PropertyValuesBinary
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example PropertyValuesBinary"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedDate:
+        name: LastUpdatedDate
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      UserId: '"Example UserId"'
+      PropertyNames: '"Example PropertyNames"'
+      PropertyValuesString: '"Example PropertyValuesString"'
+      PropertyValuesBinary: '"Example PropertyValuesBinary"'
+      LastUpdatedDate: '"Example LastUpdatedDate"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "profile": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

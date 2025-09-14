@@ -1,0 +1,792 @@
+name: PatientTreatmentsDone
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/treatment/done'
+    metadata:
+      groupName: PatientTreatmentsDone
+      groupDescription: ''
+      subgroup: TreatmentsDone
+      subgroupDescription: 'PatientTreatmentsDoneController handles the CRUD operations for patient treatment controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "patient_treatments_done": [
+                          []
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient_PatientID}/treatment/done'
+    metadata:
+      groupName: PatientTreatmentsDone
+      groupDescription: ''
+      subgroup: TreatmentsDone
+      subgroupDescription: 'PatientTreatmentsDoneController handles the CRUD operations for patient treatment controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      WaitingAreaID:
+        name: WaitingAreaID
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentCost:
+        name: TreatmentCost
+        description: 'required. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentDiscount:
+        name: TreatmentDiscount
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example TreatmentDiscount"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentTotalCost:
+        name: TreatmentTotalCost
+        description: 'required. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentPayment:
+        name: TreatmentPayment
+        description: required.
+        required: false
+        example: '"Example TreatmentPayment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentDate:
+        name: TreatmentDate
+        description: 'required. date.'
+        required: false
+        example: '"Example TreatmentDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ParentPatientTreatmentDoneID:
+        name: ParentPatientTreatmentDoneID
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example ParentPatientTreatmentDoneID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentAddition:
+        name: TreatmentAddition
+        description: 'optional. nullable.'
+        required: false
+        example: '"Example TreatmentAddition"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TeethTreatmentNote:
+        name: TeethTreatmentNote
+        description: required.
+        required: false
+        example: '"Example TeethTreatmentNote"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentTypeID:
+        name: TreatmentTypeID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example TreatmentTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentSubTypeID:
+        name: TreatmentSubTypeID
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example TreatmentSubTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TeethTreatment:
+        name: TeethTreatment
+        description: required.
+        required: false
+        example: '"Example TeethTreatment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      isPrimaryTooth:
+        name: isPrimaryTooth
+        description: required.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      WaitingAreaID: architecto
+      ProviderID: '"1"'
+      TreatmentCost: 1.0
+      TreatmentDiscount: '"Example TreatmentDiscount"'
+      TreatmentTotalCost: 1.0
+      TreatmentPayment: '"Example TreatmentPayment"'
+      TreatmentDate: '"Example TreatmentDate"'
+      ParentPatientTreatmentDoneID: '"Example ParentPatientTreatmentDoneID"'
+      TreatmentAddition: '"Example TreatmentAddition"'
+      TeethTreatmentNote: '"Example TeethTreatmentNote"'
+      TreatmentTypeID: '"Example TreatmentTypeID"'
+      TreatmentSubTypeID: '"Example TreatmentSubTypeID"'
+      TeethTreatment: '"Example TeethTreatment"'
+      isPrimaryTooth: true
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "treatment_done": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/treatment/done/{id}'
+    metadata:
+      groupName: PatientTreatmentsDone
+      groupDescription: ''
+      subgroup: TreatmentsDone
+      subgroupDescription: 'PatientTreatmentsDoneController handles the CRUD operations for patient treatment controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patienttreatmentsdone to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentCost:
+        name: TreatmentCost
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentDiscount:
+        name: TreatmentDiscount
+        description: optional.
+        required: false
+        example: '"Example TreatmentDiscount"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentTax:
+        name: TreatmentTax
+        description: optional.
+        required: false
+        example: '"Example TreatmentTax"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentTotalCost:
+        name: TreatmentTotalCost
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentPayment:
+        name: TreatmentPayment
+        description: optional.
+        required: false
+        example: '"Example TreatmentPayment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentBalance:
+        name: TreatmentBalance
+        description: optional.
+        required: false
+        example: '"Example TreatmentBalance"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ModeofPayment:
+        name: ModeofPayment
+        description: optional.
+        required: false
+        example: '"Example ModeofPayment"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ChequeNo:
+        name: ChequeNo
+        description: optional.
+        required: false
+        example: '"Example ChequeNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ChequeDate:
+        name: ChequeDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example ChequeDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      BankName:
+        name: BankName
+        description: optional.
+        required: false
+        example: '"Example BankName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardBankID:
+        name: CreditCardBankID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example CreditCardBankID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardDigit:
+        name: CreditCardDigit
+        description: optional.
+        required: false
+        example: '"Example CreditCardDigit"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardOwner:
+        name: CreditCardOwner
+        description: optional.
+        required: false
+        example: '"Example CreditCardOwner"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardValidFrom:
+        name: CreditCardValidFrom
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardValidTo:
+        name: CreditCardValidTo
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentDate:
+        name: TreatmentDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example TreatmentDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderInchargeID:
+        name: ProviderInchargeID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: optional.
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: optional.
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReceiptDate:
+        name: ReceiptDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example ReceiptDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReceiptNo:
+        name: ReceiptNo
+        description: optional.
+        required: false
+        example: '"Example ReceiptNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsArchived:
+        name: IsArchived
+        description: optional.
+        required: false
+        example: '"Example IsArchived"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ParentPatientTreatmentDoneID:
+        name: ParentPatientTreatmentDoneID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ParentPatientTreatmentDoneID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TreatmentAddition:
+        name: TreatmentAddition
+        description: optional.
+        required: false
+        example: '"Example TreatmentAddition"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      WaitingAreaID:
+        name: WaitingAreaID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example WaitingAreaID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AmountToBeCollected:
+        name: AmountToBeCollected
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      TeethTreatmentNote:
+        name: TeethTreatmentNote
+        description: optional.
+        required: false
+        example: '"Example TeethTreatmentNote"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ArchivedOn:
+        name: ArchivedOn
+        description: optional.
+        required: false
+        example: '"Example ArchivedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      isPrimaryTooth:
+        name: isPrimaryTooth
+        description: optional.
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsCompleted:
+        name: IsCompleted
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      CompletionTime:
+        name: CompletionTime
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      ProviderID: '"1"'
+      TreatmentCost: 1.0
+      TreatmentDiscount: '"Example TreatmentDiscount"'
+      TreatmentTax: '"Example TreatmentTax"'
+      TreatmentTotalCost: 1.0
+      TreatmentPayment: '"Example TreatmentPayment"'
+      TreatmentBalance: '"Example TreatmentBalance"'
+      ModeofPayment: '"Example ModeofPayment"'
+      ChequeNo: '"Example ChequeNo"'
+      ChequeDate: '"Example ChequeDate"'
+      BankName: '"Example BankName"'
+      CreditCardBankID: '"Example CreditCardBankID"'
+      CreditCardDigit: '"Example CreditCardDigit"'
+      CreditCardOwner: '"Example CreditCardOwner"'
+      CreditCardValidFrom: '"1"'
+      CreditCardValidTo: '"1"'
+      TreatmentDate: '"Example TreatmentDate"'
+      ProviderInchargeID: '"1"'
+      IsDeleted: '"Example IsDeleted"'
+      AddedBy: '"Example AddedBy"'
+      AddedOn: '"Example AddedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      rowguid: '"1"'
+      ReceiptDate: '"Example ReceiptDate"'
+      ReceiptNo: '"Example ReceiptNo"'
+      IsArchived: '"Example IsArchived"'
+      ParentPatientTreatmentDoneID: '"Example ParentPatientTreatmentDoneID"'
+      TreatmentAddition: '"Example TreatmentAddition"'
+      WaitingAreaID: '"Example WaitingAreaID"'
+      AmountToBeCollected: 1.0
+      TeethTreatmentNote: '"Example TeethTreatmentNote"'
+      ArchivedOn: '"Example ArchivedOn"'
+      isPrimaryTooth: true
+      IsCompleted: true
+      CompletionTime: architecto
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "treatment_done": []
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

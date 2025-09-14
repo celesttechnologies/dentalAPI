@@ -1,0 +1,623 @@
+name: PersonalReminder
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient}/reminders'
+    metadata:
+      groupName: PersonalReminder
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "personal_reminders": [
+                          {
+                              "reminder_id": 1,
+                              "clinic_id": 1,
+                              "patient_id": 1,
+                              "user_id": 1,
+                              "provider_id": 1,
+                              "reminder_type_id": 1,
+                              "reminder_date": "Example value",
+                              "reminder_subject": "Example value",
+                              "reminder_description": "Example value",
+                              "is_deleted": true,
+                              "created_by": "Example value",
+                              "created_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "rowguid": 1,
+                              "status_id": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/reminders'
+    metadata:
+      groupName: PersonalReminder
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UserID:
+        name: UserID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example UserID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderTypeID:
+        name: ReminderTypeID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ReminderTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderDate:
+        name: ReminderDate
+        description: 'required. date.'
+        required: false
+        example: '"Example ReminderDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderSubject:
+        name: ReminderSubject
+        description: required.
+        required: false
+        example: '"Example ReminderSubject"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderDescription:
+        name: ReminderDescription
+        description: required.
+        required: false
+        example: '"Example ReminderDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: required.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: required.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusId:
+        name: StatusId
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example StatusId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      PatientID: '"Example PatientID"'
+      UserID: '"Example UserID"'
+      ProviderID: '"1"'
+      ReminderTypeID: '"Example ReminderTypeID"'
+      ReminderDate: '"Example ReminderDate"'
+      ReminderSubject: '"Example ReminderSubject"'
+      ReminderDescription: '"Example ReminderDescription"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      rowguid: '"1"'
+      StatusId: '"Example StatusId"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "reminder": {
+                          "reminder_id": 1,
+                          "clinic_id": 1,
+                          "patient_id": 1,
+                          "user_id": 1,
+                          "provider_id": 1,
+                          "reminder_type_id": 1,
+                          "reminder_date": "Example value",
+                          "reminder_subject": "Example value",
+                          "reminder_description": "Example value",
+                          "is_deleted": true,
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "rowguid": 1,
+                          "status_id": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/reminders/{personalReminder_ReminderId}'
+    metadata:
+      groupName: PersonalReminder
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      personalReminder_ReminderId:
+        name: personalReminder_ReminderId
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the personalreminder to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      personalReminder_ReminderId: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UserID:
+        name: UserID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example UserID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ProviderID:
+        name: ProviderID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderTypeID:
+        name: ReminderTypeID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ReminderTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderDate:
+        name: ReminderDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example ReminderDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderSubject:
+        name: ReminderSubject
+        description: optional.
+        required: false
+        example: '"Example ReminderSubject"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReminderDescription:
+        name: ReminderDescription
+        description: optional.
+        required: false
+        example: '"Example ReminderDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedBy:
+        name: CreatedBy
+        description: optional.
+        required: false
+        example: '"Example CreatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreatedOn:
+        name: CreatedOn
+        description: optional.
+        required: false
+        example: '"Example CreatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      StatusId:
+        name: StatusId
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example StatusId"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      PatientID: '"Example PatientID"'
+      UserID: '"Example UserID"'
+      ProviderID: '"1"'
+      ReminderTypeID: '"Example ReminderTypeID"'
+      ReminderDate: '"Example ReminderDate"'
+      ReminderSubject: '"Example ReminderSubject"'
+      ReminderDescription: '"Example ReminderDescription"'
+      IsDeleted: '"Example IsDeleted"'
+      CreatedBy: '"Example CreatedBy"'
+      CreatedOn: '"Example CreatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      rowguid: '"1"'
+      StatusId: '"Example StatusId"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "reminder": {
+                          "reminder_id": 1,
+                          "clinic_id": 1,
+                          "patient_id": 1,
+                          "user_id": 1,
+                          "provider_id": 1,
+                          "reminder_type_id": 1,
+                          "reminder_date": "Example value",
+                          "reminder_subject": "Example value",
+                          "reminder_description": "Example value",
+                          "is_deleted": true,
+                          "created_by": "Example value",
+                          "created_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "rowguid": 1,
+                          "status_id": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

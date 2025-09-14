@@ -1,0 +1,715 @@
+name: Item
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/item
+    metadata:
+      groupName: Item
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "items": [
+                          {
+                              "item_id": 1,
+                              "clinic_id": 1,
+                              "item_type_id": 1,
+                              "item_name": "Example Name",
+                              "manufacturer": "Example value",
+                              "description": "Example value",
+                              "measure": "Example value",
+                              "unit_of_measure": "Example value",
+                              "internal_prescription": "Example value",
+                              "minimum_quantity": "Example value",
+                              "maximum_quantity": "Example value",
+                              "reorder_quantity": "Example value",
+                              "rate": "Example value",
+                              "added_by": "Example value",
+                              "added_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "is_deleted": true,
+                              "row_guid": 1,
+                              "location": "Example value",
+                              "shelflife": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/item
+    metadata:
+      groupName: Item
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ItemTypeID:
+        name: ItemTypeID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ItemTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ItemName:
+        name: ItemName
+        description: required.
+        required: false
+        example: '"Example ItemName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Manufacturer:
+        name: Manufacturer
+        description: required.
+        required: false
+        example: '"Example Manufacturer"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: required.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Measure:
+        name: Measure
+        description: required.
+        required: false
+        example: '"Example Measure"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UnitOfMeasure:
+        name: UnitOfMeasure
+        description: required.
+        required: false
+        example: '"Example UnitOfMeasure"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InternalPrescription:
+        name: InternalPrescription
+        description: required.
+        required: false
+        example: '"Example InternalPrescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MinimumQuantity:
+        name: MinimumQuantity
+        description: required.
+        required: false
+        example: '"Example MinimumQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MaximumQuantity:
+        name: MaximumQuantity
+        description: required.
+        required: false
+        example: '"Example MaximumQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReorderQuantity:
+        name: ReorderQuantity
+        description: required.
+        required: false
+        example: '"Example ReorderQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Rate:
+        name: Rate
+        description: required.
+        required: false
+        example: '"Example Rate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: required.
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: required.
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Location:
+        name: Location
+        description: required.
+        required: false
+        example: '"Example Location"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Shelflife:
+        name: Shelflife
+        description: required.
+        required: false
+        example: '"Example Shelflife"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      ItemTypeID: '"Example ItemTypeID"'
+      ItemName: '"Example ItemName"'
+      Manufacturer: '"Example Manufacturer"'
+      Description: '"Example Description"'
+      Measure: '"Example Measure"'
+      UnitOfMeasure: '"Example UnitOfMeasure"'
+      InternalPrescription: '"Example InternalPrescription"'
+      MinimumQuantity: '"Example MinimumQuantity"'
+      MaximumQuantity: '"Example MaximumQuantity"'
+      ReorderQuantity: '"Example ReorderQuantity"'
+      Rate: '"Example Rate"'
+      AddedBy: '"Example AddedBy"'
+      AddedOn: '"Example AddedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      IsDeleted: '"Example IsDeleted"'
+      rowguid: '"1"'
+      Location: '"Example Location"'
+      Shelflife: '"Example Shelflife"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "item": {
+                          "item_id": 1,
+                          "clinic_id": 1,
+                          "item_type_id": 1,
+                          "item_name": "Example Name",
+                          "manufacturer": "Example value",
+                          "description": "Example value",
+                          "measure": "Example value",
+                          "unit_of_measure": "Example value",
+                          "internal_prescription": "Example value",
+                          "minimum_quantity": "Example value",
+                          "maximum_quantity": "Example value",
+                          "reorder_quantity": "Example value",
+                          "rate": "Example value",
+                          "added_by": "Example value",
+                          "added_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "is_deleted": true,
+                          "row_guid": 1,
+                          "location": "Example value",
+                          "shelflife": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/item/{item_ItemID}'
+    metadata:
+      groupName: Item
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      item_ItemID:
+        name: item_ItemID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the item to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      item_ItemID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ItemTypeID:
+        name: ItemTypeID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ItemTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ItemName:
+        name: ItemName
+        description: optional.
+        required: false
+        example: '"Example ItemName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Manufacturer:
+        name: Manufacturer
+        description: optional.
+        required: false
+        example: '"Example Manufacturer"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Description:
+        name: Description
+        description: optional.
+        required: false
+        example: '"Example Description"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Measure:
+        name: Measure
+        description: optional.
+        required: false
+        example: '"Example Measure"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      UnitOfMeasure:
+        name: UnitOfMeasure
+        description: optional.
+        required: false
+        example: '"Example UnitOfMeasure"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      InternalPrescription:
+        name: InternalPrescription
+        description: optional.
+        required: false
+        example: '"Example InternalPrescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MinimumQuantity:
+        name: MinimumQuantity
+        description: optional.
+        required: false
+        example: '"Example MinimumQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MaximumQuantity:
+        name: MaximumQuantity
+        description: optional.
+        required: false
+        example: '"Example MaximumQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ReorderQuantity:
+        name: ReorderQuantity
+        description: optional.
+        required: false
+        example: '"Example ReorderQuantity"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Rate:
+        name: Rate
+        description: optional.
+        required: false
+        example: '"Example Rate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: optional.
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: optional.
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Location:
+        name: Location
+        description: optional.
+        required: false
+        example: '"Example Location"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Shelflife:
+        name: Shelflife
+        description: optional.
+        required: false
+        example: '"Example Shelflife"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      ItemTypeID: '"Example ItemTypeID"'
+      ItemName: '"Example ItemName"'
+      Manufacturer: '"Example Manufacturer"'
+      Description: '"Example Description"'
+      Measure: '"Example Measure"'
+      UnitOfMeasure: '"Example UnitOfMeasure"'
+      InternalPrescription: '"Example InternalPrescription"'
+      MinimumQuantity: '"Example MinimumQuantity"'
+      MaximumQuantity: '"Example MaximumQuantity"'
+      ReorderQuantity: '"Example ReorderQuantity"'
+      Rate: '"Example Rate"'
+      AddedBy: '"Example AddedBy"'
+      AddedOn: '"Example AddedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      IsDeleted: '"Example IsDeleted"'
+      rowguid: '"1"'
+      Location: '"Example Location"'
+      Shelflife: '"Example Shelflife"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "item": {
+                          "item_id": 1,
+                          "clinic_id": 1,
+                          "item_type_id": 1,
+                          "item_name": "Example Name",
+                          "manufacturer": "Example value",
+                          "description": "Example value",
+                          "measure": "Example value",
+                          "unit_of_measure": "Example value",
+                          "internal_prescription": "Example value",
+                          "minimum_quantity": "Example value",
+                          "maximum_quantity": "Example value",
+                          "reorder_quantity": "Example value",
+                          "rate": "Example value",
+                          "added_by": "Example value",
+                          "added_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "is_deleted": true,
+                          "row_guid": 1,
+                          "location": "Example value",
+                          "shelflife": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

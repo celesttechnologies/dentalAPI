@@ -1,0 +1,544 @@
+name: PatientSetting
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/setting'
+    metadata:
+      groupName: PatientSetting
+      groupDescription: ''
+      subgroup: Settings
+      subgroupDescription: 'PatientSettingController handles the CRUD operations for patient setting controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "patient_settings": [
+                          {
+                              "patient_setting_id": 1,
+                              "patient_treatment_id": 1,
+                              "setting": "Example value",
+                              "setting_date": "Example value",
+                              "provider_id": 1,
+                              "provider_incharge_id": 1,
+                              "work_done": "Example value",
+                              "req_lab_work": "Example value",
+                              "setting_note": "Example value",
+                              "estimated_cost": "Example value",
+                              "mode_of_payment": "Example value",
+                              "amount_paid": 1,
+                              "balance_amount": "Example value",
+                              "available_balance": "Example value",
+                              "cheque_no": "Example value",
+                              "cheque_date": "Example value",
+                              "bank_name": "Example Name",
+                              "credit_card_bank_id": 1,
+                              "credit_card_digit": "Example value",
+                              "credit_card_owner": "Example value",
+                              "credit_card_valid_from": 1,
+                              "credit_card_valid_to": 1,
+                              "is_deleted": true,
+                              "added_on": "Example value",
+                              "added_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "setting_id": 1,
+                              "id": 1,
+                              "rowguid": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/setting'
+    metadata:
+      groupName: PatientSetting
+      groupDescription: ''
+      subgroup: Settings
+      subgroupDescription: 'PatientSettingController handles the CRUD operations for patient setting controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientSettingID:
+        name: PatientSettingID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientSettingID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardValidTo:
+        name: CreditCardValidTo
+        description: 'optional. nullable. Maximum length: 50.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      SettingID:
+        name: SettingID
+        description: 'required. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ID:
+        name: ID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      PatientSettingID: '"Example PatientSettingID"'
+      CreditCardValidTo: '"1"'
+      IsDeleted: true
+      AddedOn: '"Example AddedOn"'
+      AddedBy: '"Example AddedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      SettingID: 1.0
+      ID: 1.0
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "setting": {
+                          "patient_setting_id": 1,
+                          "patient_treatment_id": 1,
+                          "setting": "Example value",
+                          "setting_date": "Example value",
+                          "provider_id": 1,
+                          "provider_incharge_id": 1,
+                          "work_done": "Example value",
+                          "req_lab_work": "Example value",
+                          "setting_note": "Example value",
+                          "estimated_cost": "Example value",
+                          "mode_of_payment": "Example value",
+                          "amount_paid": 1,
+                          "balance_amount": "Example value",
+                          "available_balance": "Example value",
+                          "cheque_no": "Example value",
+                          "cheque_date": "Example value",
+                          "bank_name": "Example Name",
+                          "credit_card_bank_id": 1,
+                          "credit_card_digit": "Example value",
+                          "credit_card_owner": "Example value",
+                          "credit_card_valid_from": 1,
+                          "credit_card_valid_to": 1,
+                          "is_deleted": true,
+                          "added_on": "Example value",
+                          "added_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "setting_id": 1,
+                          "id": 1,
+                          "rowguid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/setting/{id}'
+    metadata:
+      groupName: PatientSetting
+      groupDescription: ''
+      subgroup: Settings
+      subgroupDescription: 'PatientSettingController handles the CRUD operations for patient setting controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientsetting to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientSettingID:
+        name: PatientSettingID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientSettingID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      CreditCardValidTo:
+        name: CreditCardValidTo
+        description: 'optional. nullable. Maximum length: 50.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: 'optional. nullable.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. nullable. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      SettingID:
+        name: SettingID
+        description: 'optional. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ID:
+        name: ID
+        description: 'optional. nullable. integer.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. nullable. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      PatientSettingID: '"Example PatientSettingID"'
+      CreditCardValidTo: '"1"'
+      IsDeleted: true
+      AddedOn: '"Example AddedOn"'
+      AddedBy: '"Example AddedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      SettingID: 1.0
+      ID: 1.0
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "setting": {
+                          "patient_setting_id": 1,
+                          "patient_treatment_id": 1,
+                          "setting": "Example value",
+                          "setting_date": "Example value",
+                          "provider_id": 1,
+                          "provider_incharge_id": 1,
+                          "work_done": "Example value",
+                          "req_lab_work": "Example value",
+                          "setting_note": "Example value",
+                          "estimated_cost": "Example value",
+                          "mode_of_payment": "Example value",
+                          "amount_paid": 1,
+                          "balance_amount": "Example value",
+                          "available_balance": "Example value",
+                          "cheque_no": "Example value",
+                          "cheque_date": "Example value",
+                          "bank_name": "Example Name",
+                          "credit_card_bank_id": 1,
+                          "credit_card_digit": "Example value",
+                          "credit_card_owner": "Example value",
+                          "credit_card_valid_from": 1,
+                          "credit_card_valid_to": 1,
+                          "is_deleted": true,
+                          "added_on": "Example value",
+                          "added_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "setting_id": 1,
+                          "id": 1,
+                          "rowguid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

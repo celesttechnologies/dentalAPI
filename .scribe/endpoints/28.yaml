@@ -1,0 +1,437 @@
+name: PatientMedicalHistoryAttribute
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/patients/{patient_PatientID}/medical/history-attribute'
+    metadata:
+      groupName: PatientMedicalHistoryAttribute
+      groupDescription: ''
+      subgroup: MedicalHistoryAttribute
+      subgroupDescription: 'PatientMedicalHistoryAttributeController handles the CRUD operations for patient medical history attribute controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient_PatientID:
+        name: patient_PatientID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient_PatientID: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "medical_history_attributes": [
+                          {
+                              "patient_medical_detail_id": 1,
+                              "patient_id": 1,
+                              "medical_attributes_category": "Example value",
+                              "medical_attributes_id": 1,
+                              "medical_attribute_value": "Example value",
+                              "medical_attribute_text": "Example value",
+                              "medical_history_date": "Example value",
+                              "last_updated_by": "Example value",
+                              "last_updated_on": "Example value"
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/patients/{patient}/medical/history-attribute'
+    metadata:
+      groupName: PatientMedicalHistoryAttribute
+      groupDescription: ''
+      subgroup: MedicalHistoryAttribute
+      subgroupDescription: 'PatientMedicalHistoryAttributeController handles the CRUD operations for patient medical history attribute controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributesCategory:
+        name: MedicalAttributesCategory
+        description: required.
+        required: false
+        example: '"Example MedicalAttributesCategory"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributesID:
+        name: MedicalAttributesID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example MedicalAttributesID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributeValue:
+        name: MedicalAttributeValue
+        description: required.
+        required: false
+        example: '"Example MedicalAttributeValue"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributeText:
+        name: MedicalAttributeText
+        description: required.
+        required: false
+        example: '"Example MedicalAttributeText"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalHistoryDate:
+        name: MedicalHistoryDate
+        description: 'required. date.'
+        required: false
+        example: '"Example MedicalHistoryDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      MedicalAttributesCategory: '"Example MedicalAttributesCategory"'
+      MedicalAttributesID: '"Example MedicalAttributesID"'
+      MedicalAttributeValue: '"Example MedicalAttributeValue"'
+      MedicalAttributeText: '"Example MedicalAttributeText"'
+      MedicalHistoryDate: '"Example MedicalHistoryDate"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "medical_history_attribute": {
+                          "patient_medical_detail_id": 1,
+                          "patient_id": 1,
+                          "medical_attributes_category": "Example value",
+                          "medical_attributes_id": 1,
+                          "medical_attribute_value": "Example value",
+                          "medical_attribute_text": "Example value",
+                          "medical_history_date": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/patients/{patient}/medical/history-attribute/{id}'
+    metadata:
+      groupName: PatientMedicalHistoryAttribute
+      groupDescription: ''
+      subgroup: MedicalHistoryAttribute
+      subgroupDescription: 'PatientMedicalHistoryAttributeController handles the CRUD operations for patient medical history attribute controller.'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      patient:
+        name: patient
+        description: 'The patient.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the patientmedicalhistoryattribute to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      patient: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      PatientID:
+        name: PatientID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example PatientID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributesCategory:
+        name: MedicalAttributesCategory
+        description: optional.
+        required: false
+        example: '"Example MedicalAttributesCategory"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributesID:
+        name: MedicalAttributesID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example MedicalAttributesID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributeValue:
+        name: MedicalAttributeValue
+        description: optional.
+        required: false
+        example: '"Example MedicalAttributeValue"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalAttributeText:
+        name: MedicalAttributeText
+        description: optional.
+        required: false
+        example: '"Example MedicalAttributeText"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      MedicalHistoryDate:
+        name: MedicalHistoryDate
+        description: 'optional. date.'
+        required: false
+        example: '"Example MedicalHistoryDate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      PatientID: '"Example PatientID"'
+      MedicalAttributesCategory: '"Example MedicalAttributesCategory"'
+      MedicalAttributesID: '"Example MedicalAttributesID"'
+      MedicalAttributeValue: '"Example MedicalAttributeValue"'
+      MedicalAttributeText: '"Example MedicalAttributeText"'
+      MedicalHistoryDate: '"Example MedicalHistoryDate"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "medical_history_attribute": {
+                          "patient_medical_detail_id": 1,
+                          "patient_id": 1,
+                          "medical_attributes_category": "Example value",
+                          "medical_attributes_id": 1,
+                          "medical_attribute_value": "Example value",
+                          "medical_attribute_text": "Example value",
+                          "medical_history_date": "Example value",
+                          "last_updated_by": "Example value",
+                          "last_updated_on": "Example value"
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

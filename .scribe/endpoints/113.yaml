@@ -1,0 +1,340 @@
+name: ExpensesInOutDetail
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/expenses/in-out-detail
+    metadata:
+      groupName: ExpensesInOutDetail
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "expenses_in_out_details": [
+                          {
+                              "id": 1,
+                              "expenses_header_id": 1,
+                              "expenses_type_id": 1,
+                              "other_expenses": "Example value",
+                              "amount": "Example value",
+                              "paid_by": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/expenses/in-out-detail
+    metadata:
+      groupName: ExpensesInOutDetail
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ExpensesHeaderID:
+        name: ExpensesHeaderID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ExpensesHeaderID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpensesTypeID:
+        name: ExpensesTypeID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ExpensesTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherExpenses:
+        name: OtherExpenses
+        description: required.
+        required: false
+        example: '"Example OtherExpenses"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Amount:
+        name: Amount
+        description: 'required. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PaidBy:
+        name: PaidBy
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ExpensesHeaderID: '"Example ExpensesHeaderID"'
+      ExpensesTypeID: '"Example ExpensesTypeID"'
+      OtherExpenses: '"Example OtherExpenses"'
+      Amount: 1.0
+      PaidBy: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "expense_detail": {
+                          "id": 1,
+                          "expenses_header_id": 1,
+                          "expenses_type_id": 1,
+                          "other_expenses": "Example value",
+                          "amount": "Example value",
+                          "paid_by": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/expenses/in-out-detail/{expensesInOutDetail_ExpensesDetailID}'
+    metadata:
+      groupName: ExpensesInOutDetail
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      expensesInOutDetail_ExpensesDetailID:
+        name: expensesInOutDetail_ExpensesDetailID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the expensesinoutdetail to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      expensesInOutDetail_ExpensesDetailID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ExpensesHeaderID:
+        name: ExpensesHeaderID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ExpensesHeaderID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ExpensesTypeID:
+        name: ExpensesTypeID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ExpensesTypeID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      OtherExpenses:
+        name: OtherExpenses
+        description: optional.
+        required: false
+        example: '"Example OtherExpenses"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Amount:
+        name: Amount
+        description: 'optional. numeric.'
+        required: false
+        example: 1.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PaidBy:
+        name: PaidBy
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ExpensesHeaderID: '"Example ExpensesHeaderID"'
+      ExpensesTypeID: '"Example ExpensesTypeID"'
+      OtherExpenses: '"Example OtherExpenses"'
+      Amount: 1.0
+      PaidBy: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "expense_detail": {
+                          "id": 1,
+                          "expenses_header_id": 1,
+                          "expenses_type_id": 1,
+                          "other_expenses": "Example value",
+                          "amount": "Example value",
+                          "paid_by": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

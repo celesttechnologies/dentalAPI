@@ -1,0 +1,790 @@
+name: ItemSupplier
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/item/supplier
+    metadata:
+      groupName: ItemSupplier
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "item_suppliers": [
+                          {
+                              "item_supplier_id": 1,
+                              "clinic_id": 1,
+                              "supplier_name": "Example Name",
+                              "registration_no": "Example value",
+                              "contact_person": "Example value",
+                              "notes": "Example value",
+                              "street1": "Example value",
+                              "street2": "Example value",
+                              "city": "Example value",
+                              "state": "Example value",
+                              "country": "Example value",
+                              "postcode": "Example value",
+                              "isd": "Example value",
+                              "std": "Example value",
+                              "phone": "Example value",
+                              "permanent_address": "Example value",
+                              "added_on": "Example value",
+                              "added_by": "Example value",
+                              "last_updated_on": "Example value",
+                              "last_updated_by": "Example value",
+                              "deleted_on": "Example value",
+                              "deleted_by": "Example value",
+                              "is_active": true,
+                              "row_guid": 1
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/item/supplier
+    metadata:
+      groupName: ItemSupplier
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SupplierName:
+        name: SupplierName
+        description: required.
+        required: false
+        example: '"Example SupplierName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RegistrationNo:
+        name: RegistrationNo
+        description: required.
+        required: false
+        example: '"Example RegistrationNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ContactPerson:
+        name: ContactPerson
+        description: required.
+        required: false
+        example: '"Example ContactPerson"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Notes:
+        name: Notes
+        description: required.
+        required: false
+        example: '"Example Notes"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Street1:
+        name: Street1
+        description: required.
+        required: false
+        example: '"Example Street1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Street2:
+        name: Street2
+        description: required.
+        required: false
+        example: '"Example Street2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      City:
+        name: City
+        description: required.
+        required: false
+        example: '"Example City"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      State:
+        name: State
+        description: required.
+        required: false
+        example: '"Example State"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Country:
+        name: Country
+        description: required.
+        required: false
+        example: '"Example Country"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Postcode:
+        name: Postcode
+        description: required.
+        required: false
+        example: '"Example Postcode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ISD:
+        name: ISD
+        description: required.
+        required: false
+        example: '"Example ISD"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      STD:
+        name: STD
+        description: required.
+        required: false
+        example: '"Example STD"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Phone:
+        name: Phone
+        description: required.
+        required: false
+        example: '"Example Phone"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PermanentAddress:
+        name: PermanentAddress
+        description: required.
+        required: false
+        example: '"Example PermanentAddress"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: required.
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: required.
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'required. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DeletedOn:
+        name: DeletedOn
+        description: required.
+        required: false
+        example: '"Example DeletedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DeletedBy:
+        name: DeletedBy
+        description: required.
+        required: false
+        example: '"Example DeletedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: required.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'required. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      SupplierName: '"Example SupplierName"'
+      RegistrationNo: '"Example RegistrationNo"'
+      ContactPerson: '"Example ContactPerson"'
+      Notes: '"Example Notes"'
+      Street1: '"Example Street1"'
+      Street2: '"Example Street2"'
+      City: '"Example City"'
+      State: '"Example State"'
+      Country: '"Example Country"'
+      Postcode: '"Example Postcode"'
+      ISD: '"Example ISD"'
+      STD: '"Example STD"'
+      Phone: '"Example Phone"'
+      PermanentAddress: '"Example PermanentAddress"'
+      AddedOn: '"Example AddedOn"'
+      AddedBy: '"Example AddedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      DeletedOn: '"Example DeletedOn"'
+      DeletedBy: '"Example DeletedBy"'
+      IsActive: '"Example IsActive"'
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "supplier": {
+                          "item_supplier_id": 1,
+                          "clinic_id": 1,
+                          "supplier_name": "Example Name",
+                          "registration_no": "Example value",
+                          "contact_person": "Example value",
+                          "notes": "Example value",
+                          "street1": "Example value",
+                          "street2": "Example value",
+                          "city": "Example value",
+                          "state": "Example value",
+                          "country": "Example value",
+                          "postcode": "Example value",
+                          "isd": "Example value",
+                          "std": "Example value",
+                          "phone": "Example value",
+                          "permanent_address": "Example value",
+                          "added_on": "Example value",
+                          "added_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "deleted_on": "Example value",
+                          "deleted_by": "Example value",
+                          "is_active": true,
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/item/supplier/{itemSupplier_ItemSupplierID}'
+    metadata:
+      groupName: ItemSupplier
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      itemSupplier_ItemSupplierID:
+        name: itemSupplier_ItemSupplierID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the itemsupplier to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      itemSupplier_ItemSupplierID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      ClinicID:
+        name: ClinicID
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"Example ClinicID"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      SupplierName:
+        name: SupplierName
+        description: optional.
+        required: false
+        example: '"Example SupplierName"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      RegistrationNo:
+        name: RegistrationNo
+        description: optional.
+        required: false
+        example: '"Example RegistrationNo"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ContactPerson:
+        name: ContactPerson
+        description: optional.
+        required: false
+        example: '"Example ContactPerson"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Notes:
+        name: Notes
+        description: optional.
+        required: false
+        example: '"Example Notes"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Street1:
+        name: Street1
+        description: optional.
+        required: false
+        example: '"Example Street1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Street2:
+        name: Street2
+        description: optional.
+        required: false
+        example: '"Example Street2"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      City:
+        name: City
+        description: optional.
+        required: false
+        example: '"Example City"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      State:
+        name: State
+        description: optional.
+        required: false
+        example: '"Example State"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Country:
+        name: Country
+        description: optional.
+        required: false
+        example: '"Example Country"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Postcode:
+        name: Postcode
+        description: optional.
+        required: false
+        example: '"Example Postcode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ISD:
+        name: ISD
+        description: optional.
+        required: false
+        example: '"Example ISD"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      STD:
+        name: STD
+        description: optional.
+        required: false
+        example: '"Example STD"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      Phone:
+        name: Phone
+        description: optional.
+        required: false
+        example: '"Example Phone"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      PermanentAddress:
+        name: PermanentAddress
+        description: optional.
+        required: false
+        example: '"Example PermanentAddress"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedOn:
+        name: AddedOn
+        description: optional.
+        required: false
+        example: '"Example AddedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      AddedBy:
+        name: AddedBy
+        description: optional.
+        required: false
+        example: '"Example AddedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedOn:
+        name: LastUpdatedOn
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      LastUpdatedBy:
+        name: LastUpdatedBy
+        description: 'optional. date.'
+        required: false
+        example: '"Example LastUpdatedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DeletedOn:
+        name: DeletedOn
+        description: optional.
+        required: false
+        example: '"Example DeletedOn"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      DeletedBy:
+        name: DeletedBy
+        description: optional.
+        required: false
+        example: '"Example DeletedBy"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsActive:
+        name: IsActive
+        description: optional.
+        required: false
+        example: '"Example IsActive"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      rowguid:
+        name: rowguid
+        description: 'optional. Maximum length: 255.'
+        required: false
+        example: '"1"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      ClinicID: '"Example ClinicID"'
+      SupplierName: '"Example SupplierName"'
+      RegistrationNo: '"Example RegistrationNo"'
+      ContactPerson: '"Example ContactPerson"'
+      Notes: '"Example Notes"'
+      Street1: '"Example Street1"'
+      Street2: '"Example Street2"'
+      City: '"Example City"'
+      State: '"Example State"'
+      Country: '"Example Country"'
+      Postcode: '"Example Postcode"'
+      ISD: '"Example ISD"'
+      STD: '"Example STD"'
+      Phone: '"Example Phone"'
+      PermanentAddress: '"Example PermanentAddress"'
+      AddedOn: '"Example AddedOn"'
+      AddedBy: '"Example AddedBy"'
+      LastUpdatedOn: '"Example LastUpdatedOn"'
+      LastUpdatedBy: '"Example LastUpdatedBy"'
+      DeletedOn: '"Example DeletedOn"'
+      DeletedBy: '"Example DeletedBy"'
+      IsActive: '"Example IsActive"'
+      rowguid: '"1"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "supplier": {
+                          "item_supplier_id": 1,
+                          "clinic_id": 1,
+                          "supplier_name": "Example Name",
+                          "registration_no": "Example value",
+                          "contact_person": "Example value",
+                          "notes": "Example value",
+                          "street1": "Example value",
+                          "street2": "Example value",
+                          "city": "Example value",
+                          "state": "Example value",
+                          "country": "Example value",
+                          "postcode": "Example value",
+                          "isd": "Example value",
+                          "std": "Example value",
+                          "phone": "Example value",
+                          "permanent_address": "Example value",
+                          "added_on": "Example value",
+                          "added_by": "Example value",
+                          "last_updated_on": "Example value",
+                          "last_updated_by": "Example value",
+                          "deleted_on": "Example value",
+                          "deleted_by": "Example value",
+                          "is_active": true,
+                          "row_guid": 1
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

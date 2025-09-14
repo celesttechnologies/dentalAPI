@@ -1,0 +1,315 @@
+name: EmailTemplatesTag
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/email/template/tags
+    metadata:
+      groupName: EmailTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "email_templates_tags": [
+                          {
+                              "id": 1,
+                              "email_tag_code": "user@example.com",
+                              "email_tag_description": "user@example.com",
+                              "email_tag_query": "user@example.com",
+                              "is_deleted": true
+                          }
+                      ],
+                      "pagination": {
+                          "current_page": 1,
+                          "per_pages": 50,
+                          "total": 100
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/email/template/tags
+    metadata:
+      groupName: EmailTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      EmailTagCode:
+        name: EmailTagCode
+        description: 'required. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EmailTagDescription:
+        name: EmailTagDescription
+        description: 'required. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EmailTagQuery:
+        name: EmailTagQuery
+        description: 'required. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagQuery"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: required.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      EmailTagCode: '"Example EmailTagCode"'
+      EmailTagDescription: '"Example EmailTagDescription"'
+      EmailTagQuery: '"Example EmailTagQuery"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+              {
+                  "data": {
+                      "tag": {
+                          "id": 1,
+                          "email_tag_code": "user@example.com",
+                          "email_tag_description": "user@example.com",
+                          "email_tag_query": "user@example.com",
+                          "is_deleted": true
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/email/template/tags/{emailTemplatesTag_EmailTemplatesTagID}'
+    metadata:
+      groupName: EmailTemplatesTag
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      emailTemplatesTag_EmailTemplatesTagID:
+        name: emailTemplatesTag_EmailTemplatesTagID
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'required. The ID of the emailtemplatestag to update.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      emailTemplatesTag_EmailTemplatesTagID: 16
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      EmailTagCode:
+        name: EmailTagCode
+        description: 'optional. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagCode"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EmailTagDescription:
+        name: EmailTagDescription
+        description: 'optional. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagDescription"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      EmailTagQuery:
+        name: EmailTagQuery
+        description: 'optional. Must be a valid email address. Maximum length: 255.'
+        required: false
+        example: '"Example EmailTagQuery"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      IsDeleted:
+        name: IsDeleted
+        description: optional.
+        required: false
+        example: '"Example IsDeleted"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      EmailTagCode: '"Example EmailTagCode"'
+      EmailTagDescription: '"Example EmailTagDescription"'
+      EmailTagQuery: '"Example EmailTagQuery"'
+      IsDeleted: '"Example IsDeleted"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              {
+                  "data": {
+                      "tag": {
+                          "id": 1,
+                          "email_tag_code": "user@example.com",
+                          "email_tag_description": "user@example.com",
+                          "email_tag_query": "user@example.com",
+                          "is_deleted": true
+                      }
+                  }
+              }
+          }
+        headers: []
+        description: Success
+        custom: []
+      -
+        status: 400
+        content: '{"message": "Validation error", "errors": {"field": ["Error message"]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Resource not found"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Internal server error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
