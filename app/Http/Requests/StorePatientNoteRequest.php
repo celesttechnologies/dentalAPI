@@ -15,7 +15,6 @@ class StorePatientNoteRequest extends FormRequest
     {
         return [
             'Note' => 'required|string',
-            'CreatedBy' => 'required|string',
         ];
     }
 }

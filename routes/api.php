@@ -578,6 +578,10 @@ Route::middleware('auth:sanctum')->group(function (): void {
         Route::post('communication-master', [ClinicCommunicationMasterController::class, 'store']);
         Route::put('communication-master/{clinicCommunicationMaster}', [ClinicCommunicationMasterController::class, 'update']);
 
+        Route::get('group-communication-master', [CommunicationGroupMasterController::class, 'index']);
+        Route::post('group-communication-master', [CommunicationGroupMasterController::class, 'store']);
+        Route::put('group-communication-master/{groupCommunicationMaster}', [CommunicationGroupMasterController::class, 'update']);
+
         Route::get('lab-supplier', [ClinicLabSupplierController::class, 'index']);
         Route::post('lab-supplier', [ClinicLabSupplierController::class, 'store']);
         Route::put('lab-supplier/{clinicLabSupplier}', [ClinicLabSupplierController::class, 'update']);

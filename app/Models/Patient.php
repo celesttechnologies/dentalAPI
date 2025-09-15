@@ -393,7 +393,7 @@ protected static function boot()
 		return $this->hasMany(PatientDiagnosis::class, 'PatientID', 'PatientID');
 	}
 
-	public function notes()
+	public function patient_notes()
 	{
 		return $this->hasMany(PatientNote::class, 'patient_id', 'PatientID');
 	}

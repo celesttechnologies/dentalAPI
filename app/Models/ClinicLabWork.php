@@ -97,7 +97,8 @@ class ClinicLabWork extends Model
 		'LabStatus',
 		'WarrantyDetails',
 		'LabInvoiceDate',
-		'LabInvoiceNumber'
+		'LabInvoiceNumber',
+		'TreatmentID'
 	];
 
 	protected static function boot()

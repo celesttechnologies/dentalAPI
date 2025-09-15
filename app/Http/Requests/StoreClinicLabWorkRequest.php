@@ -15,6 +15,7 @@ class StoreClinicLabWorkRequest extends FormRequest
     {
         return [
             'patientName' => 'nullable|string',
+            'treatmentId' => 'nullable|string',
             'selectedpatient' => 'nullable|string',
             'inChargeLT' => 'required|string',
             'chair' => 'nullable|string',

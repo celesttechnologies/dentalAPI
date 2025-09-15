@@ -13,6 +13,7 @@ class PatientNote extends Model
     protected $table = 'PatientNotes';
     protected $primaryKey = 'PatientNoteID';
     public $incrementing = false;
+    public $timestamps = false;
     protected $keyType = 'string';
     protected $fillable = [
         'PatientNoteID',

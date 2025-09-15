@@ -14,17 +14,17 @@ class StorePatientCommunicationGroupRequest extends FormRequest
     public function rules()
     {
         return [
-			'CommunicationGroupMasterGuid' => 'required|string|max:255',
-			'PatientID' => 'required|string|max:255',
-			'ClinicID' => 'required|string|max:255',
-			'GroupType' => 'required|string',
-			'GroupName' => 'required|string',
-			'GroupDescription' => 'required|string',
-			'IsDeleted' => 'required|string',
-			'CreatedBy' => 'required|string',
-			'CreatedOn' => 'required|string',
-			'LastUpdatedBy' => 'required|date',
-			'LastUpdatedOn' => 'required|date',
+			'CommunicationGroupMasterGuid' => 'nullable|string|max:255',
+			'PatientID' => 'nullable|string|max:255',
+			'ClinicID' => 'nullable|string|max:255',
+			'GroupType' => 'nullable|string',
+			'GroupName' => 'nullable|string',
+			'GroupDescription' => 'nullable|string',
+			'IsDeleted' => 'nullable|string',
+			'CreatedBy' => 'nullable|string',
+			'CreatedOn' => 'nullable|string',
+			'LastUpdatedBy' => 'nullable|date',
+			'LastUpdatedOn' => 'nullable|date',
         ];
     }
 }

@@ -49,6 +49,7 @@ class ClinicLabWorkService
         $orderNo = $lastRecord ? $lastRecord->OrderNo + 1 : 1;
         $labWork = ClinicLabWork::create([
             'ClinicID' => $data['chair'] ?? null,
+            'TreatmentID' => $data['treatmentId'] ?? null,
             'OrderNo' => $orderNo,
             'OrderNumber' => "LAB$orderNo",
             'ProviderID' => $data['inChargeLT'] ?? null,

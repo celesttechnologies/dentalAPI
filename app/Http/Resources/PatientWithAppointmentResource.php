@@ -53,6 +53,7 @@ class PatientWithAppointmentResource extends JsonResource
                 'Allergy' => PatientAllergyAttributeResource::collection($this->patient_allergy_attributes),
                 'Investigations' => PatientInvestigationResource::collection($this->patient_investigations),
                 'Consent' => new PatientConsentDetailResource($this->consents),
+                'PatientNotes' => new PatientNoteResource($this->patient_notes),
                 // 'appointments' => AppointmentResource::collection($this->appointments),
             ]
         ];
