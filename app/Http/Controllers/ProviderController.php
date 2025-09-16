@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Traits\ApiResponse;
 use Exception;
 use App\Services\ProviderService;
+use App\Services\EmailService;
 use Illuminate\Support\Facades\Log;
 use App\Http\Resources\ProviderResource;
 use App\Http\Requests\StoreProviderRequest;
@@ -16,8 +17,10 @@ class ProviderController extends Controller
 {
     use ApiResponse;
 
-    public function __construct(private ProviderService $providerService)
-    {
+    public function __construct(
+        private ProviderService $providerService,
+        private EmailService $emailService
+    ) {
     }
 
     /**
@@ -202,9 +205,17 @@ class ProviderController extends Controller
 
             $provider = $this->providerService->createProvider($validatedData);
 
+            // Send welcome email to the new provider
+            $emailSent = $this->emailService->sendWelcomeEmail($provider);
+            
+            if (!$emailSent) {
+                Log::warning('Welcome email failed to send for provider: ' . $provider->id);
+            }
+
             return $this->successResponse([
                 'message' => 'Provider created successfully',
-                'provider' => new ProviderResource($provider)
+                'provider' => new ProviderResource($provider),
+                'email_sent' => $emailSent
             ], 201);
         } catch (Exception $e) {
             Log::error('Error creating provider: ' . $e->getMessage());

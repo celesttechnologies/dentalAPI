@@ -63,7 +63,7 @@ class ClinicLabWorkController extends Controller
      * @return \Illuminate\Http\Resources\Json\ResourceCollection
      */
     public function index(Request $request, $patientId = null)
-    {
+    { 
         try {
             $perPage = $request->query('per_page', env('DEFAULT_PER_PAGE', 50));
             $data = $this->clinicLabWorkService->getLabWorks($perPage, $patientId);
