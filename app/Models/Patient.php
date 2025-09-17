@@ -11,6 +11,7 @@ use Elasticsearch\ClientBuilder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 /**
@@ -185,9 +186,17 @@ class Patient extends Model
 	public static function getElasticsearchClient()
 	{
 		if (!self::$elasticsearch) {
-			self::$elasticsearch = ClientBuilder::create()
-				->setHosts([config('elasticsearch.hosts')])
-				->build();
+			try {
+				self::$elasticsearch = ClientBuilder::create()
+					->setHosts([config('elasticsearch.hosts')])
+					->build();
+			} catch (\Exception $e) {
+				Log::error('Failed to create Elasticsearch client: ' . $e->getMessage(), [
+					'hosts' => config('elasticsearch.hosts'),
+					'error' => $e->getMessage()
+				]);
+				throw new \Exception('Elasticsearch connection failed: ' . $e->getMessage());
+			}
 		}
 		return self::$elasticsearch;
 	}
@@ -241,14 +250,23 @@ class Patient extends Model
 
 	public function indexToElasticsearch()
 	{
-		// Always eager load appointments for indexing
-		$this->loadMissing('appointments');
-		$client = self::getElasticsearchClient();
-		$client->index([
-			'index' => 'patients',
-			'id' => $this->PatientID,
-			'body' => $this->toSearchArray(),
-		]);
+		try {
+			// Always eager load appointments for indexing
+			$this->loadMissing('appointments');
+			$client = self::getElasticsearchClient();
+			$client->index([
+				'index' => 'patients',
+				'id' => $this->PatientID,
+				'body' => $this->toSearchArray(),
+			]);
+		} catch (\Exception $e) {
+			// Log the error and re-throw it so the calling code can handle it
+			Log::error('Failed to index patient to Elasticsearch: ' . $e->getMessage(), [
+				'patient_id' => $this->PatientID,
+				'error' => $e->getMessage()
+			]);
+			throw $e;
+		}
 	}
 
 protected static function boot()
@@ -265,14 +283,30 @@ protected static function boot()
 	protected static function booted()
 	{
 		static::saved(function ($patient) {
-			$patient->indexToElasticsearch();
+			try {
+				$patient->indexToElasticsearch();
+			} catch (\Exception $e) {
+				// Log the error but don't fail the patient creation
+				Log::warning('Failed to index patient to Elasticsearch: ' . $e->getMessage(), [
+					'patient_id' => $patient->PatientID,
+					'error' => $e->getMessage()
+				]);
+			}
 		});
 		static::deleted(function ($patient) {
-			$client = self::getElasticsearchClient();
-			$client->delete([
-				'index' => 'patients',
-				'id' => $patient->PatientID,
-			]);
+			try {
+				$client = self::getElasticsearchClient();
+				$client->delete([
+					'index' => 'patients',
+					'id' => $patient->PatientID,
+				]);
+			} catch (\Exception $e) {
+				// Log the error but don't fail the patient deletion
+				Log::warning('Failed to delete patient from Elasticsearch: ' . $e->getMessage(), [
+					'patient_id' => $patient->PatientID,
+					'error' => $e->getMessage()
+				]);
+			}
 		});
 	}
 
@@ -395,6 +429,6 @@ protected static function boot()
 
 	public function patient_notes()
 	{
-		return $this->hasMany(PatientNote::class, 'patient_id', 'PatientID');
+		return $this->hasMany(PatientNote::class, 'PatientID', 'PatientID');
 	}
 }
