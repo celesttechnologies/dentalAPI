@@ -192,7 +192,7 @@ function reportRoutes(): void
     Route::get('referrer', [ReferrerReportController::class, 'index']);
 }
 
-function patientRoutes(): void
+function patientRoutes(): void 
 {
     Route::post('', [PatientController::class, 'store']);
     Route::get('', [PatientController::class, 'index']);
